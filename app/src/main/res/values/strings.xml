@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TinNews</string>
+    <string name="share_link">Share The Link</string>
+    <string name="copy_the_link">Copy The Link</string>
 </resources>
