@@ -1,19 +1,25 @@
 package com.example.kex.tinnews;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
-public class WebViewActivity extends AppCompatActivity {
+public class WebViewActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     public static final String URL = "url";
     private String url = null;
     private ProgressBar progressBar;
@@ -78,4 +84,25 @@ public class WebViewActivity extends AppCompatActivity {
         menuHelper.show();
     }
 
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_share:
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "From TinNews: \n" + url;
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                this.startActivity(Intent.createChooser(sharingIntent, "Share TinNews"));
+                break;
+            case R.id.menu_copy:
+                ClipboardManager clipboard = (ClipboardManager)
+                        getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("simple text", url);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(this, "Link Copied", Toast.LENGTH_SHORT).show();
+            default:
+                break;
+        }
+        return true;
+    }
 }
