@@ -12,7 +12,6 @@ public class MainActivity extends TinBasicActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         //add click listener here
         findViewById(R.id.text_view).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,7 +24,7 @@ public class MainActivity extends TinBasicActivity {
 
     @Override
     protected int getLayout() {
-        return 0;
+        return R.layout.activity_main;
     }
 
     @Override
