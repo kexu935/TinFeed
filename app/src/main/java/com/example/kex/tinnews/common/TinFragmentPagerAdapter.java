@@ -11,7 +11,7 @@ public class TinFragmentPagerAdapter extends FragmentPagerAdapter {
     public TinFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
         for (int i = 0; i < FRAGMENT_NUMBER; i++) {
-//            fragments[i] = ContainerFragment.newInstance(i);
+            fragments[i] = ContainerFragment.newInstance(i);
         }
     }
 
