@@ -4,4 +4,7 @@
     <dimen name="eight_dp">8dp</dimen>
     <dimen name="four_dp">4dp</dimen>
     <dimen name="two_dp">2dp</dimen>
+    <!--add bottom bar height-->
+    <dimen name="bottom_navigation_height">50dp</dimen>
+    <!--end here-->
 </resources>
