@@ -3,6 +3,8 @@ package com.example.kex.tinnews;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.View;
 
 import com.example.kex.tinnews.common.ContainerFragment;
 import com.example.kex.tinnews.common.TinBasicActivity;
+import com.example.kex.tinnews.common.TinBasicFragment;
 import com.example.kex.tinnews.common.TinFragmentPagerAdapter;
 
 public class MainActivity extends TinBasicActivity {
@@ -42,6 +45,16 @@ public class MainActivity extends TinBasicActivity {
     @Override
     protected int getLayout() {
         return R.layout.activity_main;
+    }
+
+    private FragmentManager getCurrentChildFragmentManager() {
+        return adapter.getItem(viewPager.getCurrentItem()).getChildFragmentManager();
+    }
+
+    @Override
+    public void doFragmentTransaction(TinBasicFragment basicFragment) {
+        FragmentTransaction fragmentTransaction = getCurrentChildFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.child_fragment_container, basicFragment, basicFragment.getFragmentTag()).addToBackStack(null).commit();
     }
 
     @Override

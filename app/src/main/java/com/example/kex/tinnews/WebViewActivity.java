@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.kex.tinnews.common.TinBasicActivity;
+import com.example.kex.tinnews.common.TinBasicFragment;
 
 public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMenuItemClickListener {
     public static final String URL = "url";
@@ -109,6 +110,11 @@ public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMen
     @Override
     protected int getLayout() {
         return R.layout.activity_web_view;
+    }
+
+    @Override
+    public void doFragmentTransaction(TinBasicFragment basicFragment) {
+
     }
 
     @Override

@@ -17,7 +17,6 @@
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <View
         android:id="@+id/delimiter"
         android:layout_width="match_parent"
