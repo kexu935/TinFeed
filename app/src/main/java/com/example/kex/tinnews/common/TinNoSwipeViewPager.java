@@ -16,11 +16,11 @@ public class TinNoSwipeViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        return super.onInterceptTouchEvent(event);
+        return false;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
+        return false;
     }
 }
