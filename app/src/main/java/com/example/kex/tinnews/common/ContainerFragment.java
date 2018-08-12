@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.kex.tinnews.R;
 import com.example.kex.tinnews.save.SavedNewsFragment;
+import com.example.kex.tinnews.tin.TinGalleryFragment;
 
 public class ContainerFragment extends TinBasicFragment {
     public static final int HOME_PAGE = 0;
@@ -30,7 +31,7 @@ public class ContainerFragment extends TinBasicFragment {
     private static Fragment createInitFragmentByIndex(int pageIndex) {
         switch (pageIndex) {
             case HOME_PAGE:
-                return null;
+                return TinGalleryFragment.newInstance();
             case SAVE_PAGE:
                 return SavedNewsFragment.newInstance();
             case PROFILE_PAGE:
