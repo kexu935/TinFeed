@@ -9,9 +9,16 @@ import android.view.ViewGroup;
 
 import com.example.kex.tinnews.R;
 import com.example.kex.tinnews.common.TinBasicFragment;
+import com.example.kex.tinnews.retrofit.NewsRequestApi;
+import com.example.kex.tinnews.retrofit.RetrofitClient;
 import com.example.kex.tinnews.retrofit.response.News;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
+
+import java.util.List;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,33 +53,34 @@ public class TinGalleryFragment extends TinBasicFragment implements TinNewsCard.
                         .setSwipeInMsgLayoutId(R.layout.tin_news_swipe_in_msg_view)
                         .setSwipeOutMsgLayoutId(R.layout.tin_news_swipe_out_msg_view));
 
-        view.findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mSwipeView.doSwipe(false);
-            }
-        });
+        view.findViewById(R.id.rejectBtn).setOnClickListener(v -> mSwipeView.doSwipe(false));
 
-        view.findViewById(R.id.acceptBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mSwipeView.doSwipe(true);
-            }
-        });
+        view.findViewById(R.id.acceptBtn).setOnClickListener(v -> mSwipeView.doSwipe(true));
 
-        //fake date
-        for (int i = 0; i < 10; i++) {
-            News news = new News();
-            news.image = "https://i.ytimg.com/vi/BgIJ45HKDpw/maxresdefault.jpg";
-            TinNewsCard tinNewsCard = new TinNewsCard(news, mSwipeView, this);
-            mSwipeView.addView(tinNewsCard);
-        }
+        //fake data
+        getData();
 
         return view;
     }
 
+    private void getData() {
+        RetrofitClient.getInstance().create(NewsRequestApi.class).getNewsByCountry("us")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .filter(baseResponse -> baseResponse != null && baseResponse.articles != null)
+                .subscribe(baseResponse -> {
+                    showNewsCard(baseResponse.articles);
+                });
+    }
+
+    private void showNewsCard(List<News> newsList) {
+        for (News news : newsList) {
+            TinNewsCard tinNewsCard = new TinNewsCard(news, mSwipeView, this);
+            mSwipeView.addView(tinNewsCard);
+        }
+    }
+
     @Override
     public void onLike(News news) {
-
     }
 }
