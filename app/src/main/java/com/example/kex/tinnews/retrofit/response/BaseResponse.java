@@ -6,8 +6,7 @@ import java.util.List;
 
 public class BaseResponse {
     public String status;
-    public int totalResult;
+    public int totalResults;
     @SerializedName("articles")
     public List<News> articles;
-
 }
