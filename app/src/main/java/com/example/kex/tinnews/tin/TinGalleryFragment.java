@@ -71,6 +71,7 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
 
     @Override
     public void onLike(News news) {
+        presenter.saveFavoriteNews(news);
     }
 
     @Override

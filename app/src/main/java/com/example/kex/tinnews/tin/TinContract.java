@@ -12,9 +12,13 @@ public interface TinContract {
 
     interface Presenter extends MvpContract.Presenter<View, Model> {
         void showNewsCard(List<News> newsList);
+
+        void saveFavoriteNews(News news);
     }
 
     interface Model extends MvpContract.Model<Presenter> {
         void fetchData();
+
+        void saveFavoriteNews(News news);
     }
 }

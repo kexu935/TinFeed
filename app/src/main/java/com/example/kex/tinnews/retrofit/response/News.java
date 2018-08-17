@@ -1,15 +1,19 @@
 package com.example.kex.tinnews.retrofit.response;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
+@Entity(tableName = "news")
 public class News implements Parcelable {
 
     public String author;
     @NonNull
+    @PrimaryKey
     public String title;
     public String description;
     public String url;
