@@ -10,12 +10,13 @@ import android.widget.TextView;
 
 import com.example.kex.tinnews.R;
 import com.example.kex.tinnews.common.TinBasicFragment;
+import com.example.kex.tinnews.mvp.MvpFragment;
 import com.example.kex.tinnews.save.detail.SavedNewsDetailedFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SavedNewsFragment extends TinBasicFragment {
+public class SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> implements SavedNewsContract.View {
 
 
     public static SavedNewsFragment newInstance() {
@@ -45,5 +46,8 @@ public class SavedNewsFragment extends TinBasicFragment {
     }
 
 
-
+    @Override
+    public SavedNewsContract.Presenter getPresenter() {
+        return new SavedNewsPresenter();
+    }
 }
