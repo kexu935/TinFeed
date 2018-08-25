@@ -17,7 +17,7 @@ public class TinApplication extends Application {
                 AppDatabase.class, "tin_db").build();
     }
 
-    public static AppDatabase getDatabase() {
+    public static AppDatabase getDataBase() {
         return database;
     }
 }

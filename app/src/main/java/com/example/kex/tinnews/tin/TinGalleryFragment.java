@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.kex.tinnews.R;
 import com.example.kex.tinnews.common.TinBasicFragment;
@@ -67,6 +68,11 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
             TinNewsCard tinNewsCard = new TinNewsCard(news, mSwipeView, this);
             mSwipeView.addView(tinNewsCard);
         }
+    }
+
+    @Override
+    public void onError() {
+        Toast.makeText(getContext(), "News has been inserted before", Toast.LENGTH_SHORT).show();
     }
 
     @Override

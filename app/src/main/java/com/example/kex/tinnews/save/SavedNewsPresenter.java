@@ -1,5 +1,9 @@
 package com.example.kex.tinnews.save;
 
+import com.example.kex.tinnews.retrofit.response.News;
+
+import java.util.List;
+
 public class SavedNewsPresenter implements SavedNewsContract.Presenter {
     private final SavedNewsContract.Model model;
     private SavedNewsContract.View view;
@@ -22,10 +26,18 @@ public class SavedNewsPresenter implements SavedNewsContract.Presenter {
     @Override
     public void onViewAttached(SavedNewsContract.View view) {
         this.view = view;
+        this.model.fetchData();
     }
 
     @Override
     public void onViewDetached() {
         this.view = null;
+    }
+
+    @Override
+    public void loadSavedNews(List<News> newsList) {
+        if (view != null) {
+            view.loadSavedNews(newsList);
+        }
     }
 }

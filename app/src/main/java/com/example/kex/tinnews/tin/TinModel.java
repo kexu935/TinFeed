@@ -21,7 +21,7 @@ public class TinModel implements TinContract.Model {
 
     public TinModel() {
         newsRequestApi = RetrofitClient.getInstance().create(NewsRequestApi.class);
-        db = TinApplication.getDatabase();
+        db = TinApplication.getDataBase();
     }
     @Override
     public void setPresenter(TinContract.Presenter presenter) {
@@ -48,6 +48,7 @@ public class TinModel implements TinContract.Model {
                 subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(() ->{
 
         }, error -> {
+                    presenter.onError();
         });
     }
 }
