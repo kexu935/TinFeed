@@ -40,7 +40,7 @@ public class SavedNewsViewModel extends BaseViewModel<SavedNewsViewModel.SavedNe
         holder.description.setText(news.getDescription());
         holder.icon.setImageResource(getDrawable());
         holder.itemView.setOnClickListener(v -> {
-            tinFragmentManager.doFragmentTransaction(SavedNewsDetailedFragment.newInstance());
+            tinFragmentManager.doFragmentTransaction(SavedNewsDetailedFragment.newInstance(news));
         });
     }
 
