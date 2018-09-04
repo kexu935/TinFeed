@@ -19,6 +19,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
+                                      <entry key="iconShape" value="CIRCLE" />
                                       <entry key="imageAsset" value="C:\Users\kex\Downloads\image-20180809T234034Z-001\image\ic_launcher.png" />
                                     </map>
                                   </option>
