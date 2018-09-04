@@ -26,7 +26,7 @@
         android:background="@color/light_gray"
         app:layout_constraintTop_toBottomOf="@id/app_header" />
 
-    <com.example.kex.tinnews.common.TinNoSwipeViewPager
+    <com.example.kex.tinfeed.common.TinNoSwipeViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
