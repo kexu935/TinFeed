@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.kex.tinfeed.R;
+import com.example.kex.tinfeed.profile.TinProfileFragment;
 import com.example.kex.tinfeed.save.SavedNewsFragment;
 import com.example.kex.tinfeed.tin.TinGalleryFragment;
 
@@ -35,7 +36,7 @@ public class ContainerFragment extends TinBasicFragment {
             case SAVE_PAGE:
                 return SavedNewsFragment.newInstance();
             case PROFILE_PAGE:
-                return null;
+                return TinProfileFragment.newInstance();
                 default:
                     throw new IndexOutOfBoundsException();
         }
