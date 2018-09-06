@@ -64,6 +64,7 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
 
     @Override
     public void showNewsCard(List<News> newsList) {
+        mSwipeView.removeAllViews();
         for (News news : newsList) {
             TinNewsCard tinNewsCard = new TinNewsCard(news, mSwipeView, this);
             mSwipeView.addView(tinNewsCard);
