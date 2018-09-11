@@ -1,4 +1,4 @@
-# TinFeed: a Tinder-like News Android App
+# TinFeed: a Tinder-like Android News App
 * Designed a Tinder Flavor News Android app based on MVP architectural pattern
 * Implemented ViewPager with BottomBar that holds News/Save/Profile tabs' state in MainActivity concurrently
 * Utilized PlaceHolderView to support swipe gestures for liking/disliking the news
