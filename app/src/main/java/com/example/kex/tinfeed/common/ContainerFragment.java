@@ -38,8 +38,8 @@ public class ContainerFragment extends TinBasicFragment {
                 return SavedNewsFragment.newInstance();
             case PROFILE_PAGE:
                 return TinProfileFragment.newInstance();
-                default:
-                    throw new IndexOutOfBoundsException();
+            default:
+                throw new IndexOutOfBoundsException();
         }
     }
 
@@ -78,8 +78,8 @@ public class ContainerFragment extends TinBasicFragment {
                 return SAVE_PAGE;
             case R.id.action_profile:
                 return PROFILE_PAGE;
-                default:
-                    throw new IndexOutOfBoundsException();
+            default:
+                throw new IndexOutOfBoundsException();
         }
     }
 }

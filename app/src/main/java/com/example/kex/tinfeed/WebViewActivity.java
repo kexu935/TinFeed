@@ -111,12 +111,8 @@ public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMen
     }
 
     @Override
-    public void doFragmentTransaction(TinBasicFragment basicFragment) {
-
-    }
+    public void doFragmentTransaction(TinBasicFragment basicFragment) {}
 
     @Override
-    public void showSnackBar(String message) {
-
-    }
+    public void showSnackBar(String message) {}
 }
