@@ -13,6 +13,7 @@ import com.example.kex.tinfeed.save.SavedNewsFragment;
 import com.example.kex.tinfeed.tin.TinGalleryFragment;
 
 public class ContainerFragment extends TinBasicFragment {
+
     public static final int HOME_PAGE = 0;
     public static final String HOME_PAGE_TAG = "home_page";
     public static final int SAVE_PAGE = 1;

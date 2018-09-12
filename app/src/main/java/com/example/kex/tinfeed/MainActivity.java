@@ -26,7 +26,7 @@ public class MainActivity extends TinBasicActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //link view pager with view
+        //link viewpager, bottombar with view
         viewPager = findViewById(R.id.viewpager);
         adapter = new TinFragmentPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);

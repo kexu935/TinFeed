@@ -5,8 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 public class TinFragmentPagerAdapter extends FragmentPagerAdapter {
+    public static final int FRAGMENT_NUMBER = 3;
     private Fragment[] fragments = new Fragment[FRAGMENT_NUMBER];
-    public static int FRAGMENT_NUMBER = 3;
 
     public TinFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
