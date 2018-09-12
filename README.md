@@ -5,3 +5,6 @@
 * Integrated Retrofit, Rxjava and Picasso to present the latest news data captured from newsapi.org
 * Utilized Room to store favored news and EventBus to communicate between fragments
 * Implemented RecyclerView and ViewModel to display news content dynamically
+
+### Demo
+<p align="center"><img src="TinFeed_demo.gif"></p>
