@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
@@ -97,7 +98,8 @@ public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMen
                         getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("simple text", url);
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(this, "Link Copied", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Link Copied", Toast.LENGTH_SHORT).show();
+                showSnackBar("Link Copied");
             default:
                 break;
         }
@@ -113,5 +115,9 @@ public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMen
     public void doFragmentTransaction(TinBasicFragment basicFragment) {}
 
     @Override
-    public void showSnackBar(String message) {}
+    public void showSnackBar(String message) {
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.snackbar), message, Snackbar.LENGTH_SHORT);
+        snackbar.getView().setBackgroundColor(getResources().getColor(R.color.white));
+        snackbar.show();
+    }
 }

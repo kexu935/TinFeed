@@ -2,6 +2,7 @@ package com.example.kex.tinfeed;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -66,6 +67,8 @@ public class MainActivity extends TinBasicActivity {
 
     @Override
     public void showSnackBar(String message) {
-
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.snackbar), message, Snackbar.LENGTH_SHORT);
+        snackbar.getView().setBackgroundColor(getResources().getColor(R.color.white));
+        snackbar.show();
     }
 }
