@@ -50,7 +50,6 @@ public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMen
 
             @Override
             public void onPageFinished(WebView view, String url) {
-                // TODO Auto-generated method stub
                 super.onPageFinished(view, url);
                 progressBar.setVisibility(View.GONE);
             }

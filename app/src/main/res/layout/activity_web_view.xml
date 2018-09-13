@@ -28,8 +28,7 @@
         android:layout_marginTop="@dimen/eight_dp"
         android:background="@color/light_gray"
         android:id="@+id/delimiter"
-        app:layout_constraintTop_toBottomOf="@id/back"
-        />
+        app:layout_constraintTop_toBottomOf="@id/back" />
 
     <WebView
         android:layout_width="match_parent"
