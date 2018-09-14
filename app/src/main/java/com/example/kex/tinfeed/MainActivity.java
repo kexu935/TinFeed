@@ -52,7 +52,10 @@ public class MainActivity extends TinBasicActivity {
     @Override
     public void doFragmentTransaction(TinBasicFragment basicFragment) {
         FragmentTransaction fragmentTransaction = getCurrentChildFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.child_fragment_container, basicFragment, basicFragment.getFragmentTag()).addToBackStack(null).commit();
+        fragmentTransaction.replace(
+                R.id.child_fragment_container,
+                basicFragment,
+                basicFragment.getFragmentTag()).addToBackStack(null).commit();
     }
 
     @Override
