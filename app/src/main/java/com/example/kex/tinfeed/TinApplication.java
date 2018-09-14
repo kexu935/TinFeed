@@ -6,6 +6,8 @@ import android.arch.persistence.room.Room;
 import com.example.kex.tinfeed.database.AppDatabase;
 import com.facebook.stetho.Stetho;
 
+import org.jetbrains.annotations.Contract;
+
 public class TinApplication extends Application {
 
     public static AppDatabase database;
@@ -17,6 +19,7 @@ public class TinApplication extends Application {
                 AppDatabase.class, "tin_db").build();
     }
 
+    @Contract(pure = true)
     public static AppDatabase getDataBase() {
         return database;
     }
