@@ -1,5 +1,7 @@
 package com.example.kex.tinfeed.retrofit;
 
+import android.support.annotation.NonNull;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -31,9 +33,8 @@ public class RetrofitClient {
         return instance;
     }
 
-
+    @NonNull
     private static OkHttpClient getHttpClient() {
-
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 .addInterceptor(new NewsInterceptor())
                 .connectTimeout(10, TimeUnit.SECONDS)
@@ -43,9 +44,8 @@ public class RetrofitClient {
     }
 
     private static class NewsInterceptor implements Interceptor {
-
         @Override
-        public Response intercept(Chain chain) throws IOException {
+        public Response intercept(@NonNull Chain chain) throws IOException {
 
             Request original = chain.request();
             Request request = original

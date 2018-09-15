@@ -45,7 +45,6 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tin_gallery, container, false);
         mSwipeView = view.findViewById(R.id.swipeView);
-        mSwipeView = view.findViewById(R.id.swipeView);
 
         mSwipeView.getBuilder()
                 .setDisplayViewCount(3)
@@ -56,7 +55,6 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
                         .setSwipeOutMsgLayoutId(R.layout.tin_news_swipe_out_msg_view));
 
         view.findViewById(R.id.rejectBtn).setOnClickListener(v -> mSwipeView.doSwipe(false));
-
         view.findViewById(R.id.acceptBtn).setOnClickListener(v -> mSwipeView.doSwipe(true));
 
         return view;
@@ -73,12 +71,13 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
 
     @Override
     public void onError() {
-        Toast.makeText(getContext(), "News has been inserted before", Toast.LENGTH_SHORT).show();
+        tinFragmentManager.showSnackBar("News has been inserted before");
     }
 
     @Override
     public void onLike(News news) {
         presenter.saveFavoriteNews(news);
+        tinFragmentManager.showSnackBar("Saving news...");
     }
 
     @Override

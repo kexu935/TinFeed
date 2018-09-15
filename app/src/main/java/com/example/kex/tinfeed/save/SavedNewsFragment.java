@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> implements SavedNewsContract.View {
+public class  SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> implements SavedNewsContract.View {
 
     private ViewModelAdapter savedNewsAdapter;
     private TextView emptyState;

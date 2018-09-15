@@ -22,9 +22,7 @@ public class News implements Parcelable {
     @SerializedName("publishedAt")  //add serializedAnnotation
     public String time;
 
-    public News() {
-
-    }
+    public News() {}
 
     protected News(Parcel in) {
         author = in.readString();
