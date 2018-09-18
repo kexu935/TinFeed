@@ -33,7 +33,6 @@ public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> i
         return view;
     }
 
-
     @Override
     public ProfileContract.Presenter getPresenter() {
         return new ProfilePresenter();
@@ -56,5 +55,10 @@ public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> i
     @Override
     public void onCacheCleared() {
         tinFragmentManager.showSnackBar("Saved news has been cleared");
+    }
+
+    @Override
+    public void onCountryChanged(String country) {
+        tinFragmentManager.showSnackBar("Country has been changed to " + country);
     }
 }

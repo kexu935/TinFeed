@@ -33,5 +33,6 @@ public class ProfileModel implements ProfileContract.Model {
     @Override
     public void setDefaultCountry(String country) {
         EventBus.getDefault().post(new CountryEvent(country));
+        presenter.onCountryChanged(country);
     }
 }

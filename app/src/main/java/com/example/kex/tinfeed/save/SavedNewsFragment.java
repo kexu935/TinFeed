@@ -47,7 +47,6 @@ public class SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> 
         emptyState = view.findViewById(R.id.empty_state);
         savedNewsAdapter = new ViewModelAdapter();
         recyclerView.setAdapter(savedNewsAdapter);
-
         return view;
     }
 

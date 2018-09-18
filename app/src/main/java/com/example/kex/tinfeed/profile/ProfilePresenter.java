@@ -40,6 +40,11 @@ public class ProfilePresenter implements ProfileContract.Presenter {
     }
 
     @Override
+    public void onCountryChanged(String country) {
+        view.onCountryChanged(country);
+    }
+
+    @Override
     public View.OnClickListener getCacheClearListener() {
         return view -> {
             model.deleteAllNewsCache();
