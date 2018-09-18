@@ -10,7 +10,7 @@ public interface SavedNewsContract {
         void loadSavedNews(List<News> newsList);
     }
 
-    interface Presenter extends  MvpContract.Presenter<View, Model> {
+    interface Presenter extends MvpContract.Presenter<View, Model> {
         void loadSavedNews(List<News> newsList);
     }
 
