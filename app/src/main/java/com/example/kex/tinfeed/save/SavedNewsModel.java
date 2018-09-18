@@ -27,8 +27,9 @@ public class SavedNewsModel implements SavedNewsContract.Model {
     public void fetchData() {
         db.newsDao().getAll().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(presenter::loadSavedNews, error -> {
+                    System.out.println("onError");
                 }, () -> {
-                    System.out.println("complete");
+                    System.out.println("onComplete");
                 });
     }
 }

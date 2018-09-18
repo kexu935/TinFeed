@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class  SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> implements SavedNewsContract.View {
+public class SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> implements SavedNewsContract.View {
 
     private ViewModelAdapter savedNewsAdapter;
     private TextView emptyState;
@@ -67,7 +67,7 @@ public class  SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter>
         if (newsList != null) {
             List<SavedNewsViewModel> models = new LinkedList<>();
             for (News news : newsList) {
-                models.add(new SavedNewsViewModel(news, tinFragmentManager));
+                models.add(0, new SavedNewsViewModel(news, tinFragmentManager));
             }
             savedNewsAdapter.addViewModels(models);
         }

@@ -13,15 +13,11 @@ public class SavedNewsPresenter implements SavedNewsContract.Presenter {
         model.setPresenter(this);
     }
 
-        @Override
-    public void onCreate() {
-
-    }
+    @Override
+    public void onCreate() {}
 
     @Override
-    public void onDestroy() {
-
-    }
+    public void onDestroy() {}
 
     @Override
     public void onViewAttached(SavedNewsContract.View view) {
