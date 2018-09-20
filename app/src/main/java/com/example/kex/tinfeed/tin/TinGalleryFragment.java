@@ -28,6 +28,7 @@ import io.reactivex.schedulers.Schedulers;
 public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> implements TinNewsCard.OnSwipeListener, TinContract.View{
 
     private SwipePlaceHolderView mSwipeView;
+    private int cardCount;
 
     public static TinGalleryFragment newInstance() {
 
@@ -54,10 +55,20 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
                         .setSwipeInMsgLayoutId(R.layout.tin_news_swipe_in_msg_view)
                         .setSwipeOutMsgLayoutId(R.layout.tin_news_swipe_out_msg_view));
 
-        view.findViewById(R.id.rejectBtn).setOnClickListener(v -> mSwipeView.doSwipe(false));
-        view.findViewById(R.id.acceptBtn).setOnClickListener(v -> mSwipeView.doSwipe(true));
+        view.findViewById(R.id.rejectBtn).setOnClickListener((View v) -> {
+            mSwipeView.doSwipe(false);
+        });
+        view.findViewById(R.id.acceptBtn).setOnClickListener((View v) -> {
+            mSwipeView.doSwipe(true);
+        });
 
         return view;
+    }
+
+    private void updateCount() {
+        if (--cardCount == 0) {
+            presenter.onOutOfCard();
+        }
     }
 
     @Override
@@ -67,6 +78,7 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
             TinNewsCard tinNewsCard = new TinNewsCard(news, mSwipeView, this);
             mSwipeView.addView(tinNewsCard);
         }
+        cardCount = newsList.size();
     }
 
     @Override
@@ -77,6 +89,7 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
     @Override
     public void onLike(News news) {
         presenter.saveFavoriteNews(news);
+        updateCount();
         tinFragmentManager.showSnackBar("Saving news...");
     }
 

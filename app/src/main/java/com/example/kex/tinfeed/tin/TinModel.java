@@ -40,13 +40,14 @@ public class TinModel implements TinContract.Model {
                 });
     }
 
-
     @SuppressLint("CheckResult")
     @Override
     public void saveFavoriteNews(News news) {
-        Completable.fromAction(() -> db.newsDao().insertNews(news)).
-                subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(() ->{
-
+        Completable.fromAction(() -> db.newsDao().
+                insertNews(news)).
+                subscribeOn(Schedulers.io()).
+                observeOn(AndroidSchedulers.mainThread()).
+                subscribe(() ->{
         }, error -> {
                     presenter.onError();
         });
