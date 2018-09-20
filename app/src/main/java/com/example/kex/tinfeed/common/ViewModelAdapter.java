@@ -31,7 +31,7 @@ public class ViewModelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         notifyItemInserted(position);
     }
 
-    public void removeViewModel(int position) {
+    private void removeViewModel(int position) {
         if (position < -1 || position >= viewModels.size()) {
             return;
         }
@@ -45,8 +45,7 @@ public class ViewModelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     private int getPosition(BaseViewModel viewModel) {
-        int position = viewModels.indexOf(viewModel);
-        return  position;
+        return viewModels.indexOf(viewModel);
     }
 
 
@@ -60,7 +59,6 @@ public class ViewModelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         viewModels.get(position).bindViewHolder(holder);
     }
-
 
     @Override
     public int getItemCount() {

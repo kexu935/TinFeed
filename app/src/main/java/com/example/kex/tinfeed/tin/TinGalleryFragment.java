@@ -1,7 +1,6 @@
 package com.example.kex.tinfeed.tin;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +13,6 @@ import com.mindorks.placeholderview.SwipePlaceHolderView;
 
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> implements TinNewsCard.OnSwipeListener, TinContract.View{
 
     private SwipePlaceHolderView mSwipeView;

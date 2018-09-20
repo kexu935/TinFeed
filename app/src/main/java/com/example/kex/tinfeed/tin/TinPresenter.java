@@ -14,11 +14,12 @@ public class TinPresenter implements TinContract.Presenter {
     private TinContract.View view;
     private TinContract.Model model;
     private String country;
+    private static final String INIT_COUNTRY = "us";
 
     TinPresenter() {
         this.model = new TinModel();
         this.model.setPresenter(this);
-        this.country = "us";
+        this.country = INIT_COUNTRY;
     }
 
     @Override

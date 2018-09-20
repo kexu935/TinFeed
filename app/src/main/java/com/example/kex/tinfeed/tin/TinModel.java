@@ -19,7 +19,7 @@ public class TinModel implements TinContract.Model {
 
     private final AppDatabase db;
 
-    public TinModel() {
+    TinModel() {
         newsRequestApi = RetrofitClient.getInstance().create(NewsRequestApi.class);
         db = TinApplication.getDataBase();
     }
