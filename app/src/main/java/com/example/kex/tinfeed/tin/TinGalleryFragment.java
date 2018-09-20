@@ -1,26 +1,18 @@
 package com.example.kex.tinfeed.tin;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.kex.tinfeed.R;
-import com.example.kex.tinfeed.common.TinBasicFragment;
 import com.example.kex.tinfeed.mvp.MvpFragment;
-import com.example.kex.tinfeed.retrofit.NewsRequestApi;
-import com.example.kex.tinfeed.retrofit.RetrofitClient;
 import com.example.kex.tinfeed.retrofit.response.News;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
 import java.util.List;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,16 +21,16 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
 
     private SwipePlaceHolderView mSwipeView;
     private int cardCount;
+    private static final int DEFAULT_VIEW_COUNT = 3;
+    private static final int DEFAULT_PADDING_TOP = 20;
+    private static final float DEFAULT_RELATIVE_SCALE = 0.01f;
 
     public static TinGalleryFragment newInstance() {
-
         Bundle args = new Bundle();
-
         TinGalleryFragment fragment = new TinGalleryFragment();
         fragment.setArguments(args);
         return fragment;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,10 +40,10 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
         mSwipeView = view.findViewById(R.id.swipeView);
 
         mSwipeView.getBuilder()
-                .setDisplayViewCount(3)
+                .setDisplayViewCount(DEFAULT_VIEW_COUNT)
                 .setSwipeDecor(new SwipeDecor()
-                        .setPaddingTop(20)
-                        .setRelativeScale(0.01f)
+                        .setPaddingTop(DEFAULT_PADDING_TOP)
+                        .setRelativeScale(DEFAULT_RELATIVE_SCALE)
                         .setSwipeInMsgLayoutId(R.layout.tin_news_swipe_in_msg_view)
                         .setSwipeOutMsgLayoutId(R.layout.tin_news_swipe_out_msg_view));
 

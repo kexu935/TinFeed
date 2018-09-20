@@ -22,7 +22,6 @@ public class MainActivity extends TinBasicActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         //link viewpager, bottombar with view
         viewPager = findViewById(R.id.viewpager);

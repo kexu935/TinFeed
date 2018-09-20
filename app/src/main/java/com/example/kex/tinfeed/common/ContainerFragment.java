@@ -51,7 +51,10 @@ public class ContainerFragment extends TinBasicFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if (initFragment != null && !initFragment.isAdded()) {
-            getChildFragmentManager().beginTransaction().replace(R.id.child_fragment_container, initFragment, getCurrentTag(pageIndex)).commit();
+            getChildFragmentManager().
+                    beginTransaction().
+                    replace(R.id.child_fragment_container, initFragment, getCurrentTag(pageIndex)).
+                    commit();
         }
     }
 

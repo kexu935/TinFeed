@@ -13,10 +13,12 @@ public class TinPresenter implements TinContract.Presenter {
 
     private TinContract.View view;
     private TinContract.Model model;
-    public static final String DEFAULT_COUNTRY = "us";
-    public TinPresenter() {
+    private String country;
+
+    TinPresenter() {
         this.model = new TinModel();
         this.model.setPresenter(this);
+        this.country = "us";
     }
 
     @Override
@@ -32,14 +34,15 @@ public class TinPresenter implements TinContract.Presenter {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(CountryEvent countryEvent) {
         if (this.view != null) {
-            this.model.fetchData(countryEvent.country);
+            this.country = countryEvent.country;
+            this.model.fetchData(country);
         }
     }
 
     @Override
     public void onViewAttached(TinContract.View view) {
         this.view = view;
-        this.model.fetchData(DEFAULT_COUNTRY);
+        this.model.fetchData(this.country);
     }
 
     @Override
@@ -61,7 +64,9 @@ public class TinPresenter implements TinContract.Presenter {
 
     @Override
     public void onOutOfCard() {
-        this.model.fetchData(DEFAULT_COUNTRY);
+        if (this.view != null) {
+            this.model.fetchData(this.country);
+        }
     }
 
     @Override
