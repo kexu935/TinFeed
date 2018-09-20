@@ -18,6 +18,7 @@ import com.example.kex.tinfeed.retrofit.response.News;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,7 +51,7 @@ public class SavedNewsDetailedFragment extends TinBasicFragment {
     @Override
     public void onResume() {
         super.onResume();
-        loadNews(getArguments().getParcelable(NEWS));
+        loadNews(Objects.requireNonNull(getArguments().getParcelable(NEWS)));
     }
 
     private void loadNews(News news) {

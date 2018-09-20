@@ -57,7 +57,5 @@ public class AuthorViewModel extends BaseViewModel<AuthorViewModel.AuthorViewMod
             author = itemView.findViewById(R.id.author);
             timeStamp = itemView.findViewById(R.id.time_stamp);
         }
-
     }
-
 }
