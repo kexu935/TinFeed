@@ -15,13 +15,14 @@ public class RowTextViewModel extends BaseViewModel<RowTextViewModel.RowTextView
 
     private final String rowText;
     private final View.OnClickListener listener;
-    private int flagImage;
+    private Integer flagImage;
 
     public RowTextViewModel(String rowText, View.OnClickListener listener) {
         super(R.layout.setting_row_text_layout);
         this.rowText = getCountryName(rowText);
         this.listener = listener;
     }
+
     @NonNull
     @Contract(pure = true)
     private String getCountryName(String text) {
@@ -39,6 +40,7 @@ public class RowTextViewModel extends BaseViewModel<RowTextViewModel.RowTextView
                 return text;
         }
     }
+
     @Override
     public RowTextViewModelHolder createItemViewHolder(View view) {
         return new RowTextViewModelHolder(view);
@@ -46,7 +48,11 @@ public class RowTextViewModel extends BaseViewModel<RowTextViewModel.RowTextView
 
     @Override
     public void bindViewHolder(RowTextViewModelHolder holder) {
-        holder.flag.setImageResource(flagImage);
+        if (flagImage != null) {
+            holder.flag.setImageResource(flagImage);
+        } else {
+            holder.flag.setVisibility(View.GONE);
+        }
         holder.row.setText(rowText);
         holder.row.setOnClickListener(listener);
     }
