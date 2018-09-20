@@ -1,22 +1,44 @@
 package com.example.kex.tinfeed.profile;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.kex.tinfeed.R;
 import com.example.kex.tinfeed.common.BaseViewModel;
 
+import org.jetbrains.annotations.Contract;
+
 public class RowTextViewModel extends BaseViewModel<RowTextViewModel.RowTextViewModelHolder> {
 
     private final String rowText;
     private final View.OnClickListener listener;
+    private int flagImage;
+
     public RowTextViewModel(String rowText, View.OnClickListener listener) {
         super(R.layout.setting_row_text_layout);
-        this.rowText = rowText;
+        this.rowText = getCountryName(rowText);
         this.listener = listener;
     }
-
+    @NonNull
+    @Contract(pure = true)
+    private String getCountryName(String text) {
+        switch (text) {
+            case "us":
+                flagImage = R.drawable.ic_list_us;
+                return "United States";
+            case "cn" :
+                flagImage = R.drawable.ic_list_cn;
+                return "China";
+            case "de" :
+                flagImage = R.drawable.ic_list_de;
+                return "German";
+            default:
+                return text;
+        }
+    }
     @Override
     public RowTextViewModelHolder createItemViewHolder(View view) {
         return new RowTextViewModelHolder(view);
@@ -24,14 +46,17 @@ public class RowTextViewModel extends BaseViewModel<RowTextViewModel.RowTextView
 
     @Override
     public void bindViewHolder(RowTextViewModelHolder holder) {
+        holder.flag.setImageResource(flagImage);
         holder.row.setText(rowText);
         holder.row.setOnClickListener(listener);
     }
 
     static class RowTextViewModelHolder extends RecyclerView.ViewHolder {
         TextView row;
+        ImageView flag;
         RowTextViewModelHolder(View itemView) {
             super(itemView);
+            flag = itemView.findViewById(R.id.flag);
             row = itemView.findViewById(R.id.row_text);
         }
     }

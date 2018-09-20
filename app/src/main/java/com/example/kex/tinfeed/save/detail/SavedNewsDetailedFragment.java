@@ -50,7 +50,6 @@ public class SavedNewsDetailedFragment extends TinBasicFragment {
     }
 
     private void loadNews(News news) {
-        //3.13
         List<BaseViewModel> viewModels = new LinkedList<>();
         if (!Util.isStringEmpty(news.title)) {
             viewModels.add(new TitleViewModel(news.title));

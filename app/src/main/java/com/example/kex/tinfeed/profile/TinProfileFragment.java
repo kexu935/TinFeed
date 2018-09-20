@@ -1,6 +1,7 @@
 package com.example.kex.tinfeed.profile;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,10 +18,11 @@ import com.example.kex.tinfeed.save.detail.TitleViewModel;
 public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> implements ProfileContract.View {
     private ViewModelAdapter viewModelAdapter;
 
+    @NonNull
     public static TinProfileFragment newInstance() {
-        TinProfileFragment fragment = new TinProfileFragment();
-        return fragment;
+        return new TinProfileFragment();
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -41,7 +41,9 @@ public class ProfilePresenter implements ProfileContract.Presenter {
 
     @Override
     public void onCountryChanged(String country) {
-        view.onCountryChanged(country);
+        if (view != null) {
+            view.onCountryChanged(country);
+        }
     }
 
     @Override
