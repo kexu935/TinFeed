@@ -1,8 +1,6 @@
 package com.example.kex.tinfeed.save.detail;
 
-
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,9 +18,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SavedNewsDetailedFragment extends TinBasicFragment {
 
     private static final String NEWS = "NEWS";

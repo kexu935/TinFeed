@@ -17,7 +17,7 @@ public class ReadmoreViewModel extends BaseViewModel<ReadmoreViewModel.ReadmoreV
 
     private final String uri;
     private final TinFragmentManager fragmentManager;
-    public ReadmoreViewModel(String uri, TinFragmentManager fragmentManager) {
+    ReadmoreViewModel(String uri, TinFragmentManager fragmentManager) {
         super(R.layout.readmore_layout);
         this.uri = uri;
         this.fragmentManager = fragmentManager;

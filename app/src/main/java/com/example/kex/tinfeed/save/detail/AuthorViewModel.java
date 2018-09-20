@@ -14,24 +14,20 @@ import java.util.Locale;
 
 public class AuthorViewModel extends BaseViewModel<AuthorViewModel.AuthorViewModelHolder> {
 
-    //3.6
     private final String author;
     private final String timeStamp;
 
-    //3.6
-    public AuthorViewModel(String author, String timeStamp) {
+    AuthorViewModel(String author, String timeStamp) {
         super(R.layout.author_layout);
         this.author = author;
         this.timeStamp = timeStamp;
     }
 
-    //3.6
     @Override
     public AuthorViewModelHolder createItemViewHolder(View view) {
         return new AuthorViewModelHolder(view);
     }
 
-    //3.6
     @Override
     public void bindViewHolder(AuthorViewModelHolder holder) {
         holder.author.setText(author);
@@ -45,7 +41,6 @@ public class AuthorViewModel extends BaseViewModel<AuthorViewModel.AuthorViewMod
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         holder.timeStamp.setText(formatTime);
     }
 

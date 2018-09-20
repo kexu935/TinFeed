@@ -48,12 +48,10 @@ public class ViewModelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         return viewModels.indexOf(viewModel);
     }
 
-
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return viewTypeMap.get(viewType).createViewHolder(parent);
     }
-
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
@@ -65,12 +63,10 @@ public class ViewModelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         return viewModels.size();
     }
 
-
     @Override
     public int getItemViewType(int position) {
         return viewModels.get(position).getViewType();
     }
-
 
     private void addAll(Collection<? extends BaseViewModel> viewModels) {
         if (viewModels == null) {

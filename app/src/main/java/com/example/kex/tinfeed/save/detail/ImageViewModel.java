@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 public class ImageViewModel extends BaseViewModel<ImageViewModel.ImageViewModelViewHolder> {
 
     private final String uri;
-    public ImageViewModel(String uri) {
+    ImageViewModel(String uri) {
         super(R.layout.image_layout);
         this.uri = uri;
     }

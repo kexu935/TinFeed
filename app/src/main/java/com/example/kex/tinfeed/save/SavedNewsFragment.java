@@ -1,8 +1,6 @@
 package com.example.kex.tinfeed.save;
 
-
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,18 +9,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.kex.tinfeed.R;
-import com.example.kex.tinfeed.common.TinBasicFragment;
 import com.example.kex.tinfeed.common.ViewModelAdapter;
 import com.example.kex.tinfeed.mvp.MvpFragment;
 import com.example.kex.tinfeed.retrofit.response.News;
-import com.example.kex.tinfeed.save.detail.SavedNewsDetailedFragment;
 
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> implements SavedNewsContract.View {
 
     private ViewModelAdapter savedNewsAdapter;
@@ -49,7 +42,6 @@ public class SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> 
         recyclerView.setAdapter(savedNewsAdapter);
         return view;
     }
-
 
     @Override
     public SavedNewsContract.Presenter getPresenter() {

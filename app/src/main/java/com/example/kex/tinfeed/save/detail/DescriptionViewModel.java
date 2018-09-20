@@ -11,7 +11,7 @@ public class DescriptionViewModel extends BaseViewModel<DescriptionViewModel.Des
 
     private final String description;
 
-    public DescriptionViewModel(String description) {
+    DescriptionViewModel(String description) {
         super(R.layout.description_layout);
         this.description = description;
     }

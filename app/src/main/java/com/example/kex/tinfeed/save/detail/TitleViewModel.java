@@ -8,11 +8,9 @@ import android.widget.TextView;
 import com.example.kex.tinfeed.R;
 import com.example.kex.tinfeed.common.BaseViewModel;
 
-
-
 public class TitleViewModel extends BaseViewModel<TitleViewModel.TitleViewModelHolder> {
     private String title;
-    public TitleViewModel(String title) {
+    TitleViewModel(String title) {
         super(R.layout.title_layout);
         this.title = title;
     }

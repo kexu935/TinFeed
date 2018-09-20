@@ -26,7 +26,6 @@ public class SavedNewsViewModel extends BaseViewModel<SavedNewsViewModel.SavedNe
         this.tinFragmentManager = tinFragmentManager;
     }
 
-
     @Override
     public SavedNewsViewHolder createItemViewHolder(View view) {
         return new SavedNewsViewHolder(view);
