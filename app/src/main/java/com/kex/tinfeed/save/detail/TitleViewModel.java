@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.kex.tinfeed.R;
 import com.kex.tinfeed.common.BaseViewModel;
 
-public class TitleViewModel extends com.kex.tinfeed.common.BaseViewModel<TitleViewModel.TitleViewModelHolder> {
+public class TitleViewModel extends BaseViewModel<TitleViewModel.TitleViewModelHolder> {
     private String title;
     TitleViewModel(String title) {
         super(R.layout.title_layout);

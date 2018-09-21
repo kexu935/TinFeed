@@ -5,12 +5,12 @@ import android.view.View;
 import com.kex.tinfeed.profile.ProfileContract;
 import com.kex.tinfeed.profile.ProfileModel;
 
-public class ProfilePresenter implements com.kex.tinfeed.profile.ProfileContract.Presenter {
-    private com.kex.tinfeed.profile.ProfileContract.View view;
-    private com.kex.tinfeed.profile.ProfileContract.Model model;
+public class ProfilePresenter implements ProfileContract.Presenter {
+    private ProfileContract.View view;
+    private ProfileContract.Model model;
 
     ProfilePresenter() {
-        this.model = new com.kex.tinfeed.profile.ProfileModel();
+        this.model = new ProfileModel();
         this.model.setPresenter(this);
     }
 
@@ -25,7 +25,7 @@ public class ProfilePresenter implements com.kex.tinfeed.profile.ProfileContract
     }
 
     @Override
-    public void onViewAttached(com.kex.tinfeed.profile.ProfileContract.View view) {
+    public void onViewAttached(ProfileContract.View view) {
         this.view = view;
         this.view.setView();
     }

@@ -15,13 +15,13 @@ import java.util.UUID;
 
 public class TinBasicFragment extends Fragment  {
 
-    protected com.kex.tinfeed.common.TinFragmentManager tinFragmentManager;
+    protected TinFragmentManager tinFragmentManager;
     private final String uuid = UUID.randomUUID().toString();
 
     @CallSuper
     public void onAttach(Context context) {
         super.onAttach(context);
-        tinFragmentManager = (com.kex.tinfeed.common.TinFragmentManager) context;
+        tinFragmentManager = (TinFragmentManager) context;
     }
 
     @Override

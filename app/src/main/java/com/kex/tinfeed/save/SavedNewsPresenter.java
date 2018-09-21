@@ -6,12 +6,12 @@ import com.kex.tinfeed.save.SavedNewsModel;
 
 import java.util.List;
 
-public class SavedNewsPresenter implements com.kex.tinfeed.save.SavedNewsContract.Presenter {
-    private final com.kex.tinfeed.save.SavedNewsContract.Model model;
-    private com.kex.tinfeed.save.SavedNewsContract.View view;
+public class SavedNewsPresenter implements SavedNewsContract.Presenter {
+    private final SavedNewsContract.Model model;
+    private SavedNewsContract.View view;
 
-    public SavedNewsPresenter() {
-        model = new com.kex.tinfeed.save.SavedNewsModel();
+    SavedNewsPresenter() {
+        model = new SavedNewsModel();
         model.setPresenter(this);
     }
 
@@ -22,7 +22,7 @@ public class SavedNewsPresenter implements com.kex.tinfeed.save.SavedNewsContrac
     public void onDestroy() {}
 
     @Override
-    public void onViewAttached(com.kex.tinfeed.save.SavedNewsContract.View view) {
+    public void onViewAttached(SavedNewsContract.View view) {
         this.view = view;
         this.model.fetchData();
     }
@@ -33,7 +33,7 @@ public class SavedNewsPresenter implements com.kex.tinfeed.save.SavedNewsContrac
     }
 
     @Override
-    public void loadSavedNews(List<com.kex.tinfeed.retrofit.response.News> newsList) {
+    public void loadSavedNews(List<News> newsList) {
         if (view != null) {
             view.loadSavedNews(newsList);
         }

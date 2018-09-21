@@ -11,8 +11,6 @@ import com.kex.tinfeed.common.BaseViewModel;
 
 import org.jetbrains.annotations.Contract;
 
-import static com.kex.tinfeed.R.drawable.ic_list_in;
-
 public class RowTextViewModel extends BaseViewModel<com.kex.tinfeed.profile.RowTextViewModel.RowTextViewModelHolder> {
 
     private final String rowText;

@@ -12,7 +12,7 @@ import com.kex.tinfeed.profile.TinProfileFragment;
 import com.kex.tinfeed.save.SavedNewsFragment;
 import com.kex.tinfeed.tin.TinGalleryFragment;
 
-public class ContainerFragment extends com.kex.tinfeed.common.TinBasicFragment {
+public class ContainerFragment extends TinBasicFragment {
 
     public static final int HOME_PAGE = 0;
     public static final String HOME_PAGE_TAG = "home_page";
@@ -33,11 +33,11 @@ public class ContainerFragment extends com.kex.tinfeed.common.TinBasicFragment {
     private static Fragment createInitFragmentByIndex(int pageIndex) {
         switch (pageIndex) {
             case HOME_PAGE:
-                return com.kex.tinfeed.tin.TinGalleryFragment.newInstance();
+                return TinGalleryFragment.newInstance();
             case SAVE_PAGE:
-                return com.kex.tinfeed.save.SavedNewsFragment.newInstance();
+                return SavedNewsFragment.newInstance();
             case PROFILE_PAGE:
-                return com.kex.tinfeed.profile.TinProfileFragment.newInstance();
+                return TinProfileFragment.newInstance();
             default:
                 throw new IndexOutOfBoundsException();
         }

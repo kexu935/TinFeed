@@ -9,5 +9,5 @@ public class BaseResponse {
     public String status;
     public int totalResults;
     @SerializedName("articles")
-    public List<com.kex.tinfeed.retrofit.response.News> articles;
+    public List<News> articles;
 }

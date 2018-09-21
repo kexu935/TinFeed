@@ -1,6 +1,5 @@
 package com.kex.tinfeed.save.detail;
 
-
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,7 +8,7 @@ import com.kex.tinfeed.R;
 import com.kex.tinfeed.common.BaseViewModel;
 import com.squareup.picasso.Picasso;
 
-public class ImageViewModel extends com.kex.tinfeed.common.BaseViewModel<ImageViewModel.ImageViewModelViewHolder> {
+public class ImageViewModel extends BaseViewModel<ImageViewModel.ImageViewModelViewHolder> {
 
     private final String uri;
     ImageViewModel(String uri) {

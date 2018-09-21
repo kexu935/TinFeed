@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.kex.tinfeed.R;
 import com.kex.tinfeed.common.ViewModelAdapter;
@@ -22,8 +21,8 @@ public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> i
     private ViewModelAdapter viewModelAdapter;
 
     @NonNull
-    public static com.kex.tinfeed.profile.TinProfileFragment newInstance() {
-        return new com.kex.tinfeed.profile.TinProfileFragment();
+    public static TinProfileFragment newInstance() {
+        return new TinProfileFragment();
     }
 
     @Override

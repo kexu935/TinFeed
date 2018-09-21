@@ -18,7 +18,7 @@ import com.kex.tinfeed.common.TinFragmentPagerAdapter;
 public class MainActivity extends com.kex.tinfeed.common.TinBasicActivity {
     private ViewPager viewPager;
     private BottomNavigationView bottomBar;
-    private com.kex.tinfeed.common.TinFragmentPagerAdapter adapter;
+    private TinFragmentPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +26,15 @@ public class MainActivity extends com.kex.tinfeed.common.TinBasicActivity {
 
         //link viewpager, bottombar with view
         viewPager = findViewById(R.id.viewpager);
-        adapter = new com.kex.tinfeed.common.TinFragmentPagerAdapter(getSupportFragmentManager());
+        adapter = new TinFragmentPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(com.kex.tinfeed.common.TinFragmentPagerAdapter.FRAGMENT_NUMBER);
+        viewPager.setOffscreenPageLimit(TinFragmentPagerAdapter.FRAGMENT_NUMBER);
 
         bottomBar = findViewById(R.id.bottom_navigation);
         bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                viewPager.setCurrentItem(com.kex.tinfeed.common.ContainerFragment.getPositionById(item.getItemId()));
+                viewPager.setCurrentItem(ContainerFragment.getPositionById(item.getItemId()));
                 return true;
             }
         });

@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.kex.tinfeed.R;
 import com.kex.tinfeed.common.BaseViewModel;
 
-public class DescriptionViewModel extends com.kex.tinfeed.common.BaseViewModel<DescriptionViewModel.DescriptionViewHolder> {
+public class DescriptionViewModel extends BaseViewModel<DescriptionViewModel.DescriptionViewHolder> {
 
     private final String description;
 

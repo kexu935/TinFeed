@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.kex.tinfeed.common.TinFragmentManager;
 
-public abstract class TinBasicActivity extends AppCompatActivity implements com.kex.tinfeed.common.TinFragmentManager {
+public abstract class TinBasicActivity extends AppCompatActivity implements TinFragmentManager {
     protected static final String BUNDLE = "bundle";
 
     @Override

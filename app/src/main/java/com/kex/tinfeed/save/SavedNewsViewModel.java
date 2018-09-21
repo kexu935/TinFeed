@@ -13,14 +13,14 @@ import com.kex.tinfeed.common.Util;
 import com.kex.tinfeed.retrofit.response.News;
 import com.kex.tinfeed.save.detail.SavedNewsDetailedFragment;
 
-public class SavedNewsViewModel extends com.kex.tinfeed.common.BaseViewModel<SavedNewsViewModel.SavedNewsViewHolder> {
+public class SavedNewsViewModel extends BaseViewModel<SavedNewsViewModel.SavedNewsViewHolder> {
 
-    private com.kex.tinfeed.common.TinFragmentManager tinFragmentManager;
-    private com.kex.tinfeed.retrofit.response.News news;
+    private TinFragmentManager tinFragmentManager;
+    private News news;
     private static int[] ICON_ARRAY = new int[]{R.drawable.a_news_icon, R.drawable.g_news_icon,
             R.drawable.c_news_icon, R.drawable.y_news_icon, R.drawable.m_news_icon};
 
-    public SavedNewsViewModel(com.kex.tinfeed.retrofit.response.News news, com.kex.tinfeed.common.TinFragmentManager tinFragmentManager) {
+    public SavedNewsViewModel(News news, TinFragmentManager tinFragmentManager) {
         super(R.layout.saved_news_item);
         this.news = news;
         this.tinFragmentManager = tinFragmentManager;
@@ -33,13 +33,13 @@ public class SavedNewsViewModel extends com.kex.tinfeed.common.BaseViewModel<Sav
 
     @Override
     public void bindViewHolder(SavedNewsViewHolder holder) {
-        if (!com.kex.tinfeed.common.Util.isStringEmpty(news.author)) {
+        if (!Util.isStringEmpty(news.author)) {
             holder.author.setText(news.author);
         }
         holder.description.setText(news.getDescription());
         holder.icon.setImageResource(getDrawable());
         holder.itemView.setOnClickListener(v -> {
-            tinFragmentManager.doFragmentTransaction(com.kex.tinfeed.save.detail.SavedNewsDetailedFragment.newInstance(news));
+            tinFragmentManager.doFragmentTransaction(SavedNewsDetailedFragment.newInstance(news));
         });
     }
 

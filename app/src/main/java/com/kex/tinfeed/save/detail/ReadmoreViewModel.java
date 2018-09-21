@@ -13,11 +13,11 @@ import com.kex.tinfeed.common.TinFragmentManager;
 
 import static com.kex.tinfeed.WebViewActivity.URL;
 
-public class ReadmoreViewModel extends com.kex.tinfeed.common.BaseViewModel<ReadmoreViewModel.ReadmoreViewModelHolder> {
+public class ReadmoreViewModel extends BaseViewModel<ReadmoreViewModel.ReadmoreViewModelHolder> {
 
     private final String uri;
-    private final com.kex.tinfeed.common.TinFragmentManager fragmentManager;
-    ReadmoreViewModel(String uri, com.kex.tinfeed.common.TinFragmentManager fragmentManager) {
+    private final TinFragmentManager fragmentManager;
+    ReadmoreViewModel(String uri, TinFragmentManager fragmentManager) {
         super(R.layout.readmore_layout);
         this.uri = uri;
         this.fragmentManager = fragmentManager;
@@ -34,7 +34,7 @@ public class ReadmoreViewModel extends com.kex.tinfeed.common.BaseViewModel<Read
         holder.readMore.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString(URL, uri);
-            fragmentManager.startActivityWithBundle(com.kex.tinfeed.WebViewActivity.class, false, bundle);
+            fragmentManager.startActivityWithBundle(WebViewActivity.class, false, bundle);
         });
     }
 

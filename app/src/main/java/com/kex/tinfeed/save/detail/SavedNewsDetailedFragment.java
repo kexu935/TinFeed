@@ -28,10 +28,10 @@ public class SavedNewsDetailedFragment extends TinBasicFragment {
     private static final String NEWS = "NEWS";
     private ViewModelAdapter viewModelAdapter;
 
-    public static com.kex.tinfeed.save.detail.SavedNewsDetailedFragment newInstance(News news) {
+    public static SavedNewsDetailedFragment newInstance(News news) {
         Bundle args = new Bundle();
         args.putParcelable(NEWS, news);
-        com.kex.tinfeed.save.detail.SavedNewsDetailedFragment fragment = new com.kex.tinfeed.save.detail.SavedNewsDetailedFragment();
+        SavedNewsDetailedFragment fragment = new SavedNewsDetailedFragment();
         fragment.setArguments(args);
         return fragment;
     }

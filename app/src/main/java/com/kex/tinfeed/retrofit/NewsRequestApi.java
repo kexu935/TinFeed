@@ -8,5 +8,5 @@ import com.kex.tinfeed.retrofit.response.BaseResponse;
 
 public interface NewsRequestApi {
     @GET("top-headlines")
-    Observable<com.kex.tinfeed.retrofit.response.BaseResponse> getNewsByCountry(@Query("country") String country);
+    Observable<BaseResponse> getNewsByCountry(@Query("country") String country);
 }

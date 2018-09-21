@@ -97,7 +97,6 @@ public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMen
                         getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("simple text", url);
                 clipboard.setPrimaryClip(clip);
-                //Toast.makeText(this, "Link Copied", Toast.LENGTH_SHORT).show();
                 showSnackBar("Link Copied");
             default:
                 break;

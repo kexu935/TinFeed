@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface SavedNewsContract {
     interface View extends com.kex.tinfeed.mvp.MvpContract.View<Presenter> {
-        void loadSavedNews(List<com.kex.tinfeed.retrofit.response.News> newsList);
+        void loadSavedNews(List<News> newsList);
     }
 
     interface Presenter extends com.kex.tinfeed.mvp.MvpContract.Presenter<View, Model> {
-        void loadSavedNews(List<com.kex.tinfeed.retrofit.response.News> newsList);
+        void loadSavedNews(List<News> newsList);
     }
 
-    interface Model extends com.kex.tinfeed.mvp.MvpContract.Model<Presenter> {
+    interface Model extends MvpContract.Model<Presenter> {
         void fetchData();
     }
 }

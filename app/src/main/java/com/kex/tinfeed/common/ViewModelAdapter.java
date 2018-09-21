@@ -11,22 +11,22 @@ import java.util.Collection;
 import java.util.List;
 
 public class ViewModelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private final List<com.kex.tinfeed.common.BaseViewModel> viewModels;
-    private final SparseArrayCompat<com.kex.tinfeed.common.BaseViewModel> viewTypeMap;
+    private final List<BaseViewModel> viewModels;
+    private final SparseArrayCompat<BaseViewModel> viewTypeMap;
 
     public ViewModelAdapter() {
         viewModels = new ArrayList<>();
         viewTypeMap = new SparseArrayCompat<>();
     }
 
-    public void addViewModels(Collection<? extends com.kex.tinfeed.common.BaseViewModel> viewModels) {
+    public void addViewModels(Collection<? extends BaseViewModel> viewModels) {
         this.viewModels.clear();
         this.viewTypeMap.clear();
         addAll(viewModels);
         notifyDataSetChanged();
     }
 
-    public void addViewModel(com.kex.tinfeed.common.BaseViewModel viewModel) {
+    public void addViewModel(BaseViewModel viewModel) {
         this.viewModels.add(viewModel);
         viewTypeMap.put(viewModel.getViewType(), viewModel);
         int position = getPosition(viewModel);
@@ -41,12 +41,12 @@ public class ViewModelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         notifyItemRemoved(position);
     }
 
-    private void removeViewModel(com.kex.tinfeed.common.BaseViewModel viewModel) {
+    private void removeViewModel(BaseViewModel viewModel) {
         int position = getPosition(viewModel);
         removeViewModel(position);
     }
 
-    private int getPosition(com.kex.tinfeed.common.BaseViewModel viewModel) {
+    private int getPosition(BaseViewModel viewModel) {
         return viewModels.indexOf(viewModel);
     }
 
@@ -70,12 +70,12 @@ public class ViewModelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         return viewModels.get(position).getViewType();
     }
 
-    private void addAll(Collection<? extends com.kex.tinfeed.common.BaseViewModel> viewModels) {
+    private void addAll(Collection<? extends BaseViewModel> viewModels) {
         if (viewModels == null) {
             return;
         }
 
-        for (com.kex.tinfeed.common.BaseViewModel baseViewModel : viewModels) {
+        for (BaseViewModel baseViewModel : viewModels) {
             this.viewModels.add(baseViewModel);
 
             //If there are multiple items of the same type the index will just update

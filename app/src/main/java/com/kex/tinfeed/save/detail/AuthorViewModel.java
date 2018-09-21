@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class AuthorViewModel extends BaseViewModel<com.kex.tinfeed.save.detail.AuthorViewModel.AuthorViewModelHolder> {
+public class AuthorViewModel extends BaseViewModel<AuthorViewModel.AuthorViewModelHolder> {
 
     private final String author;
     private final String timeStamp;

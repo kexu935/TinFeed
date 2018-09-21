@@ -24,11 +24,11 @@ public class SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> 
     private ViewModelAdapter savedNewsAdapter;
     private TextView emptyState;
 
-    public static com.kex.tinfeed.save.SavedNewsFragment newInstance() {
+    public static SavedNewsFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        com.kex.tinfeed.save.SavedNewsFragment fragment = new com.kex.tinfeed.save.SavedNewsFragment();
+        SavedNewsFragment fragment = new SavedNewsFragment();
         fragment.setArguments(args);
         return fragment;
     }

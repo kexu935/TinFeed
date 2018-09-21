@@ -13,12 +13,12 @@ import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class ProfileModel implements com.kex.tinfeed.profile.ProfileContract.Model {
-    private com.kex.tinfeed.profile.ProfileContract.Presenter presenter;
-    private com.kex.tinfeed.database.AppDatabase db = com.kex.tinfeed.TinApplication.getDataBase();
+public class ProfileModel implements ProfileContract.Model {
+    private ProfileContract.Presenter presenter;
+    private AppDatabase db = TinApplication.getDataBase();
 
     @Override
-    public void setPresenter(com.kex.tinfeed.profile.ProfileContract.Presenter presenter) {
+    public void setPresenter(ProfileContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
@@ -32,7 +32,7 @@ public class ProfileModel implements com.kex.tinfeed.profile.ProfileContract.Mod
 
     @Override
     public void setDefaultCountry(String country) {
-        EventBus.getDefault().post(new com.kex.tinfeed.profile.CountryEvent(country));
+        EventBus.getDefault().post(new CountryEvent(country));
         presenter.onCountryChanged(country);
     }
 }

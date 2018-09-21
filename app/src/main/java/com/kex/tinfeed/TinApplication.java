@@ -10,17 +10,16 @@ import org.jetbrains.annotations.Contract;
 
 public class TinApplication extends Application {
 
-    public static com.kex.tinfeed.database.AppDatabase database;
+    public static AppDatabase database;
     @Override
     public void onCreate() {
         super.onCreate();
         Stetho.initializeWithDefaults(this);
-        database = Room.databaseBuilder(getApplicationContext(),
-                com.kex.tinfeed.database.AppDatabase.class, "tin_db").build();
+        database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "tin_db").build();
     }
 
     @Contract(pure = true)
-    public static com.kex.tinfeed.database.AppDatabase getDataBase() {
+    public static AppDatabase getDataBase() {
         return database;
     }
 }

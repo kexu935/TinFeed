@@ -13,10 +13,10 @@ import io.reactivex.Flowable;
 @Dao
 public interface NewsDao {
     @Insert
-    void insertNews(com.kex.tinfeed.retrofit.response.News news);
+    void insertNews(News news);
 
     @Query("SELECT * FROM news")
-    Flowable<List<com.kex.tinfeed.retrofit.response.News>> getAll();
+    Flowable<List<News>> getAll();
 
     @Query("DELETE FROM news")
     void deleteAllNews();
