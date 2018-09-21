@@ -11,13 +11,15 @@ import com.example.kex.tinfeed.common.BaseViewModel;
 
 import org.jetbrains.annotations.Contract;
 
+import static com.example.kex.tinfeed.R.drawable.ic_list_in;
+
 public class RowTextViewModel extends BaseViewModel<RowTextViewModel.RowTextViewModelHolder> {
 
     private final String rowText;
     private final View.OnClickListener listener;
     private Integer flagImage;
 
-    public RowTextViewModel(String rowText, View.OnClickListener listener) {
+    RowTextViewModel(String rowText, View.OnClickListener listener) {
         super(R.layout.setting_row_text_layout);
         this.rowText = getCountryName(rowText);
         this.listener = listener;
@@ -36,6 +38,9 @@ public class RowTextViewModel extends BaseViewModel<RowTextViewModel.RowTextView
             case "de" :
                 flagImage = R.drawable.ic_list_de;
                 return "German";
+            case "in" :
+                flagImage = R.drawable.ic_list_in;
+                return "India";
             default:
                 return text;
         }

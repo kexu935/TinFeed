@@ -66,7 +66,7 @@ public class TinPresenter implements TinContract.Presenter {
     @Override
     public void onOutOfCard() {
         if (this.view != null) {
-            this.model.fetchData(this.country);
+            this.model.fetchData(country);
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example.kex.tinfeed.tin;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,6 @@ import java.util.List;
 public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> implements TinNewsCard.OnSwipeListener, TinContract.View{
 
     private SwipePlaceHolderView mSwipeView;
-    private int cardCount;
     private static final int DEFAULT_VIEW_COUNT = 3;
     private static final int DEFAULT_PADDING_TOP = 20;
     private static final float DEFAULT_RELATIVE_SCALE = 0.01f;
@@ -53,11 +53,6 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
         return view;
     }
 
-    private void updateCount() {
-        if (--cardCount == 0) {
-            presenter.onOutOfCard();
-        }
-    }
 
     @Override
     public void showNewsCard(List<News> newsList) {
@@ -66,7 +61,6 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
             TinNewsCard tinNewsCard = new TinNewsCard(news, mSwipeView, this);
             mSwipeView.addView(tinNewsCard);
         }
-        cardCount = newsList.size();
     }
 
     @Override
@@ -77,8 +71,10 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
     @Override
     public void onLike(News news) {
         presenter.saveFavoriteNews(news);
-        updateCount();
         tinFragmentManager.showSnackBar("Saving news...");
+        if (mSwipeView.getChildCount() == 1) {
+            presenter.onOutOfCard();
+        }
     }
 
     @Override
