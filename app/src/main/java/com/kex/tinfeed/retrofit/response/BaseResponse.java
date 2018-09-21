@@ -1,6 +1,5 @@
 package com.kex.tinfeed.retrofit.response;
 
-import com.kex.tinfeed.retrofit.response.News;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;

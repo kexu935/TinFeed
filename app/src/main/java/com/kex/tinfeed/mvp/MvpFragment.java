@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.kex.tinfeed.common.TinBasicFragment;
-import com.kex.tinfeed.mvp.MvpContract;
 
 public abstract class MvpFragment<P extends MvpContract.Presenter> extends TinBasicFragment implements MvpContract.View<P> {
 

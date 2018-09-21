@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 
 import com.kex.tinfeed.TinApplication;
 import com.kex.tinfeed.database.AppDatabase;
-import com.kex.tinfeed.profile.CountryEvent;
-import com.kex.tinfeed.profile.ProfileContract;
 
 import org.greenrobot.eventbus.EventBus;
 

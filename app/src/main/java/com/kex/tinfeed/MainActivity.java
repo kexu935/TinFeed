@@ -1,18 +1,15 @@
 package com.kex.tinfeed;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.kex.tinfeed.R;
 import com.kex.tinfeed.common.ContainerFragment;
-import com.kex.tinfeed.common.TinBasicActivity;
-import com.kex.tinfeed.common.TinBasicFragment;
 import com.kex.tinfeed.common.TinFragmentPagerAdapter;
 
 public class MainActivity extends com.kex.tinfeed.common.TinBasicActivity {

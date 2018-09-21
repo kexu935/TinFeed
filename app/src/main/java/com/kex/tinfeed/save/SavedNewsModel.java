@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 
 import com.kex.tinfeed.TinApplication;
 import com.kex.tinfeed.database.AppDatabase;
-import com.kex.tinfeed.save.SavedNewsContract;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;

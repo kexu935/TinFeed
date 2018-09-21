@@ -13,11 +13,6 @@ import com.kex.tinfeed.common.TinBasicFragment;
 import com.kex.tinfeed.common.Util;
 import com.kex.tinfeed.common.ViewModelAdapter;
 import com.kex.tinfeed.retrofit.response.News;
-import com.kex.tinfeed.save.detail.AuthorViewModel;
-import com.kex.tinfeed.save.detail.DescriptionViewModel;
-import com.kex.tinfeed.save.detail.ImageViewModel;
-import com.kex.tinfeed.save.detail.ReadmoreViewModel;
-import com.kex.tinfeed.save.detail.TitleViewModel;
 
 import java.util.LinkedList;
 import java.util.List;

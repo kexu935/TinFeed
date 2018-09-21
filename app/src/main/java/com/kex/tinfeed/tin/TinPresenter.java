@@ -1,10 +1,5 @@
 package com.kex.tinfeed.tin;
 
-import com.kex.tinfeed.profile.CountryEvent;
-import com.kex.tinfeed.retrofit.response.News;
-import com.kex.tinfeed.tin.TinContract;
-import com.kex.tinfeed.tin.TinModel;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;

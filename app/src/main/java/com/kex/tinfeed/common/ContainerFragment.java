@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kex.tinfeed.R;
-import com.kex.tinfeed.common.TinBasicFragment;
 import com.kex.tinfeed.profile.TinProfileFragment;
 import com.kex.tinfeed.save.SavedNewsFragment;
 import com.kex.tinfeed.tin.TinGalleryFragment;

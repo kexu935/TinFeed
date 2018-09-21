@@ -1,8 +1,6 @@
 package com.kex.tinfeed.save;
 
 import com.kex.tinfeed.retrofit.response.News;
-import com.kex.tinfeed.save.SavedNewsContract;
-import com.kex.tinfeed.save.SavedNewsModel;
 
 import java.util.List;
 

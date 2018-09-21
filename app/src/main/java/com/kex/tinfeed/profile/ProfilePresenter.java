@@ -2,9 +2,6 @@ package com.kex.tinfeed.profile;
 
 import android.view.View;
 
-import com.kex.tinfeed.profile.ProfileContract;
-import com.kex.tinfeed.profile.ProfileModel;
-
 public class ProfilePresenter implements ProfileContract.Presenter {
     private ProfileContract.View view;
     private ProfileContract.Model model;

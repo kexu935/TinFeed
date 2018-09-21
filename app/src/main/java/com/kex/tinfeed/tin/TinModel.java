@@ -7,7 +7,6 @@ import com.kex.tinfeed.database.AppDatabase;
 import com.kex.tinfeed.retrofit.NewsRequestApi;
 import com.kex.tinfeed.retrofit.RetrofitClient;
 import com.kex.tinfeed.retrofit.response.News;
-import com.kex.tinfeed.tin.TinContract;
 
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;

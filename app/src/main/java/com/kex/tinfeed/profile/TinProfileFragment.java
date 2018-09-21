@@ -2,7 +2,6 @@ package com.kex.tinfeed.profile;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,9 +11,6 @@ import android.view.ViewGroup;
 import com.kex.tinfeed.R;
 import com.kex.tinfeed.common.ViewModelAdapter;
 import com.kex.tinfeed.mvp.MvpFragment;
-import com.kex.tinfeed.profile.ProfileContract;
-import com.kex.tinfeed.profile.ProfilePresenter;
-import com.kex.tinfeed.profile.RowTextViewModel;
 import com.kex.tinfeed.save.detail.TitleViewModel;
 
 public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> implements ProfileContract.View {

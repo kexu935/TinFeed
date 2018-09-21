@@ -3,8 +3,8 @@ package com.kex.tinfeed;
 import android.app.Application;
 import android.arch.persistence.room.Room;
 
-import com.kex.tinfeed.database.AppDatabase;
 import com.facebook.stetho.Stetho;
+import com.kex.tinfeed.database.AppDatabase;
 
 import org.jetbrains.annotations.Contract;
 

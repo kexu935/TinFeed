@@ -4,8 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.kex.tinfeed.common.ContainerFragment;
-
 public class TinFragmentPagerAdapter extends FragmentPagerAdapter {
     public static final int FRAGMENT_NUMBER = 3;
     private Fragment[] fragments = new Fragment[FRAGMENT_NUMBER];

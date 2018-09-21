@@ -12,9 +12,6 @@ import com.kex.tinfeed.R;
 import com.kex.tinfeed.common.ViewModelAdapter;
 import com.kex.tinfeed.mvp.MvpFragment;
 import com.kex.tinfeed.retrofit.response.News;
-import com.kex.tinfeed.save.SavedNewsContract;
-import com.kex.tinfeed.save.SavedNewsPresenter;
-import com.kex.tinfeed.save.SavedNewsViewModel;
 
 import java.util.LinkedList;
 import java.util.List;

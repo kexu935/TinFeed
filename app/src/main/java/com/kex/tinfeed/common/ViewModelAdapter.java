@@ -4,8 +4,6 @@ import android.support.v4.util.SparseArrayCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.kex.tinfeed.common.BaseViewModel;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

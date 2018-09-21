@@ -1,17 +1,11 @@
 package com.kex.tinfeed.tin;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.kex.tinfeed.R;
-import com.kex.tinfeed.mvp.MvpFragment;
-import com.kex.tinfeed.retrofit.response.News;
-import com.kex.tinfeed.tin.TinContract;
-import com.kex.tinfeed.tin.TinNewsCard;
-import com.kex.tinfeed.tin.TinPresenter;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
