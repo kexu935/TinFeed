@@ -6,12 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kex.tinfeed.R;
+import com.kex.tinfeed.mvp.MvpFragment;
+import com.kex.tinfeed.retrofit.response.News;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
 import java.util.List;
 
-public class TinGalleryFragment extends com.kex.tinfeed.mvp.MvpFragment<com.kex.tinfeed.tin.TinContract.Presenter> implements com.kex.tinfeed.tin.TinNewsCard.OnSwipeListener, com.kex.tinfeed.tin.TinContract.View{
+public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> implements TinNewsCard.OnSwipeListener, TinContract.View{
 
     private SwipePlaceHolderView mSwipeView;
     private static final int DEFAULT_VIEW_COUNT = 3;
@@ -52,10 +54,10 @@ public class TinGalleryFragment extends com.kex.tinfeed.mvp.MvpFragment<com.kex.
 
 
     @Override
-    public void showNewsCard(List<com.kex.tinfeed.retrofit.response.News> newsList) {
+    public void showNewsCard(List<News> newsList) {
         mSwipeView.removeAllViews();
-        for (com.kex.tinfeed.retrofit.response.News news : newsList) {
-            com.kex.tinfeed.tin.TinNewsCard tinNewsCard = new com.kex.tinfeed.tin.TinNewsCard(news, mSwipeView, this);
+        for (News news : newsList) {
+            TinNewsCard tinNewsCard = new TinNewsCard(news, mSwipeView, this);
             mSwipeView.addView(tinNewsCard);
         }
     }
@@ -66,7 +68,7 @@ public class TinGalleryFragment extends com.kex.tinfeed.mvp.MvpFragment<com.kex.
     }
 
     @Override
-    public void onLike(com.kex.tinfeed.retrofit.response.News news) {
+    public void onLike(News news) {
         presenter.saveFavoriteNews(news);
         tinFragmentManager.showSnackBar("Saving news...");
         if (mSwipeView.getChildCount() == 1) {
@@ -75,7 +77,7 @@ public class TinGalleryFragment extends com.kex.tinfeed.mvp.MvpFragment<com.kex.
     }
 
     @Override
-    public com.kex.tinfeed.tin.TinContract.Presenter getPresenter() {
+    public TinContract.Presenter getPresenter() {
         return new com.kex.tinfeed.tin.TinPresenter();
     }
 }

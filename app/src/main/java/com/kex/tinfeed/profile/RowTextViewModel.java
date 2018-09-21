@@ -11,7 +11,7 @@ import com.kex.tinfeed.common.BaseViewModel;
 
 import org.jetbrains.annotations.Contract;
 
-public class RowTextViewModel extends BaseViewModel<com.kex.tinfeed.profile.RowTextViewModel.RowTextViewModelHolder> {
+public class RowTextViewModel extends BaseViewModel<RowTextViewModel.RowTextViewModelHolder> {
 
     private final String rowText;
     private final View.OnClickListener listener;

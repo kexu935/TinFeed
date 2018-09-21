@@ -10,9 +10,11 @@ import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
 import com.kex.tinfeed.common.ContainerFragment;
+import com.kex.tinfeed.common.TinBasicActivity;
+import com.kex.tinfeed.common.TinBasicFragment;
 import com.kex.tinfeed.common.TinFragmentPagerAdapter;
 
-public class MainActivity extends com.kex.tinfeed.common.TinBasicActivity {
+public class MainActivity extends TinBasicActivity {
     private ViewPager viewPager;
     private BottomNavigationView bottomBar;
     private TinFragmentPagerAdapter adapter;
@@ -47,7 +49,7 @@ public class MainActivity extends com.kex.tinfeed.common.TinBasicActivity {
     }
 
     @Override
-    public void doFragmentTransaction(com.kex.tinfeed.common.TinBasicFragment basicFragment) {
+    public void doFragmentTransaction(TinBasicFragment basicFragment) {
         FragmentTransaction fragmentTransaction = getCurrentChildFragmentManager().beginTransaction();
         fragmentTransaction.replace(
                 R.id.child_fragment_container,
