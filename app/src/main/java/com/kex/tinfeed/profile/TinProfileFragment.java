@@ -15,6 +15,7 @@ import com.kex.tinfeed.save.detail.TitleViewModel;
 
 public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> implements ProfileContract.View {
     private ViewModelAdapter viewModelAdapter;
+    public static final Country[] country = {Country.us, Country.cn, Country.de, Country.in};
 
     @NonNull
     public static TinProfileFragment newInstance() {
@@ -45,11 +46,16 @@ public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> i
 
             viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.clear_cache), presenter.getCacheClearListener()));
 
-            viewModelAdapter.addViewModel(new TitleViewModel(getString(R.string.change_source), R.layout.setting_title_layout));
-            viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.us), presenter.getOnCountryChangeListener(getString(R.string.us))));
-            viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.cn), presenter.getOnCountryChangeListener(getString(R.string.cn))));
-            viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.de), presenter.getOnCountryChangeListener(getString(R.string.de))));
-            viewModelAdapter.addViewModel(new RowTextViewModel("in", presenter.getOnCountryChangeListener("in")));
+            viewModelAdapter.addViewModel(new TitleViewModel(getString(R.string.change_country), R.layout.setting_title_layout));
+
+            for (Country c : country) {
+                viewModelAdapter.addViewModel(new RowTextViewModel(getString(c.getCountry()), presenter.getOnCountryChangeListener(getString(c.getCountryUrl()))));
+            }
+
+//            viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.us), presenter.getOnCountryChangeListener(getString(R.string.us))));
+//            viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.cn), presenter.getOnCountryChangeListener(getString(R.string.cn))));
+//            viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.de), presenter.getOnCountryChangeListener(getString(R.string.de))));
+//            viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.in), presenter.getOnCountryChangeListener(getString(R.string.in))));
         }
     }
 
