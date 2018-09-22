@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:textSize="12sp"
-        android:layout_marginLeft="@dimen/four_dp"
+        android:layout_marginStart="@dimen/four_dp"
         android:id="@+id/time_stamp"
         app:layout_constraintLeft_toRightOf="@id/delimiter"
         android:textColor="@color/dark_gray"

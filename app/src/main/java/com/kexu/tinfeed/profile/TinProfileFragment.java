@@ -56,11 +56,11 @@ public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> i
 
     @Override
     public void onCacheCleared() {
-        tinFragmentManager.showSnackBar("Saved news has been cleared");
+        tinFragmentManager.showSnackBar("Saved news cleared!");
     }
 
     @Override
     public void onCountryChanged() {
-        tinFragmentManager.showSnackBar("Country changed");
+        tinFragmentManager.showSnackBar("Country changed!");
     }
 }

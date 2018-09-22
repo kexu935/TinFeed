@@ -12,7 +12,7 @@
         android:textSize="18sp"
         android:textColor="@color/light_blue"
         android:id="@+id/readmore"
-        android:text="ReadMore"
+        android:text="@string/readmore"
         android:textStyle="bold"
         android:fontFamily="@font/indie_flower"
         android:gravity="center_horizontal"/>

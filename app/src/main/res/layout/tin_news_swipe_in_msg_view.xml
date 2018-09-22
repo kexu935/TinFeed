@@ -11,5 +11,5 @@
         android:textStyle="bold"
         android:layout_margin="40dp"
         android:textColor="@color/red"
-        android:text="Like"/>
+        android:text="@string/like"/>
 </LinearLayout>

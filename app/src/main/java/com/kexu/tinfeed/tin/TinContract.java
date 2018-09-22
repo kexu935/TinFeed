@@ -7,21 +7,20 @@ import java.util.List;
 
 public interface TinContract {
     interface View extends MvpContract.View<Presenter> {
-        void setCountry(String country);
-        void showNewsCard(List<News> newsList);
+        void showNewsCard(List<News> newsList, boolean isClear);
         void onError();
     }
 
     interface Presenter extends MvpContract.Presenter<View, Model> {
-        void setCountry(String country);
-        void showNewsCard(List<News> newsList);
+        void showNewsCard(List<News> newsList, boolean isClear);
         void saveFavoriteNews(News news);
         void onOutOfCard();
         void onError();
     }
 
     interface Model extends MvpContract.Model<Presenter> {
-        void fetchData(String country);
+        void setCountry(String country);
+        void fetchData(String country, boolean isClear);
         void saveFavoriteNews(News news);
     }
 }

@@ -1,7 +1,5 @@
 package com.kexu.tinfeed.tin;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,8 +19,6 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
     private static final int DEFAULT_VIEW_COUNT = 3;
     private static final int DEFAULT_PADDING_TOP = 20;
     private static final float DEFAULT_RELATIVE_SCALE = 0.01f;
-    private SharedPreferences sharedPreferences;
-    private String country;
 
     public static TinGalleryFragment newInstance() {
         Bundle args = new Bundle();
@@ -52,22 +48,14 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
         view.findViewById(R.id.acceptBtn).setOnClickListener((View v) -> {
             mSwipeView.doSwipe(true);
         });
-        sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-        country = sharedPreferences.getString("country", "us");
-        presenter.setCountry(country);
         return view;
     }
 
     @Override
-    public void setCountry(String country) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("country", country);
-        editor.commit();
-    }
-
-    @Override
-    public void showNewsCard(List<News> newsList) {
-        mSwipeView.removeAllViews();
+    public void showNewsCard(List<News> newsList, boolean isClear) {
+        if (isClear) {
+            mSwipeView.removeAllViews();
+        }
         for (News news : newsList) {
             TinNewsCard tinNewsCard = new TinNewsCard(news, mSwipeView, this);
             mSwipeView.addView(tinNewsCard);
@@ -76,7 +64,7 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
 
     @Override
     public void onError() {
-        tinFragmentManager.showSnackBar("News has been inserted before");
+        tinFragmentManager.showSnackBar("News saved before!");
     }
 
     @Override

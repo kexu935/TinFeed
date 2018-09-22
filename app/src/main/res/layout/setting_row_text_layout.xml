@@ -11,8 +11,7 @@
     <ImageView
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginLeft="10dp"
-        android:layout_alignParentLeft="true"
+        android:layout_marginStart="8dp"
         android:layout_centerVertical="true"
         android:id="@+id/flag" />
 
@@ -20,7 +19,8 @@
         android:id="@+id/row_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/flag"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/flag"
         android:padding="@dimen/four_dp"
         android:textSize="16sp" />
 

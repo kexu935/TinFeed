@@ -1,5 +1,7 @@
 package com.kexu.tinfeed.tin;
 
+import android.app.Activity;
+
 import com.kexu.tinfeed.profile.CountryEvent;
 import com.kexu.tinfeed.retrofit.response.News;
 
@@ -34,14 +36,15 @@ public class TinPresenter implements TinContract.Presenter {
     public void onEvent(CountryEvent countryEvent) {
         if (this.view != null) {
             this.country = countryEvent.country;
-            this.model.fetchData(this.country);
+            this.model.setCountry(this.country);
+            this.model.fetchData(this.country, true);
         }
     }
 
     @Override
     public void onViewAttached(TinContract.View view) {
         this.view = view;
-        this.model.fetchData(this.country);
+        this.model.fetchData(this.country, false);
     }
 
     @Override
@@ -50,15 +53,9 @@ public class TinPresenter implements TinContract.Presenter {
     }
 
     @Override
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    @Override
-    public void showNewsCard(List<News> newsList) {
+    public void showNewsCard(List<News> newsList, boolean isClear) {
         if (view != null) {
-            view.showNewsCard(newsList);
-            view.setCountry(this.country);
+            view.showNewsCard(newsList, isClear);
         }
     }
 
@@ -70,7 +67,7 @@ public class TinPresenter implements TinContract.Presenter {
     @Override
     public void onOutOfCard() {
         if (this.view != null) {
-            this.model.fetchData(country);
+            this.model.fetchData(country, false);
         }
     }
 
