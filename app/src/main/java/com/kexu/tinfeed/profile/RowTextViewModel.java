@@ -36,6 +36,7 @@ public class RowTextViewModel extends BaseViewModel<RowTextViewModel.RowTextView
         }
         holder.row.setText(rowText);
         holder.row.setOnClickListener(listener);
+        holder.flag.setOnClickListener(listener);
     }
 
     static class RowTextViewModelHolder extends RecyclerView.ViewHolder {
