@@ -8,7 +8,8 @@ enum Country {
     us(R.string.UnitedStates, R.string.us, R.drawable.ic_list_us),
     cn(R.string.China, R.string.cn, R.drawable.ic_list_cn),
     de(R.string.German, R.string.de, R.drawable.ic_list_de),
-    in(R.string.India, R.string.in, R.drawable.ic_list_in);
+    in(R.string.India, R.string.in, R.drawable.ic_list_in),
+    sg(R.string.Singapore, R.string.sg, R.drawable.ic_list_sg);
 
     private int country;
     private int countryUrl;

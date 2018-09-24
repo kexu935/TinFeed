@@ -14,43 +14,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:foreground="?attr/selectableItemBackground">
+
         <TextView
             android:id="@+id/author_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:maxLines="1"
             android:padding="@dimen/four_dp"
             android:text="@string/author"
-            android:fontFamily="@font/dancing_script"
-            android:maxLines="1"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/author"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:gravity="start"
             android:padding="@dimen/four_dp"
             android:text="@string/author_unknown"
-            android:id="@+id/author"
-            android:gravity="start"
-            android:fontFamily="@font/dancing_script"
-            app:layout_constraintRight_toLeftOf="@id/image"
+            android:maxLines="1"
             app:layout_constraintLeft_toRightOf="@+id/author_label"
+            app:layout_constraintRight_toLeftOf="@id/image"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/description_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/four_dp"
-            android:text="@string/description"
-            android:fontFamily="@font/dancing_script"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@id/author_label"
-            app:layout_constraintTop_toBottomOf="@id/author_label" />
 
         <View
-            app:layout_constraintTop_toBottomOf="@id/description_label"
+            app:layout_constraintTop_toBottomOf="@id/author_label"
             android:id="@+id/description_delimiter"
             android:layout_width="0dp"
             android:layout_height="1dp"
@@ -61,12 +53,12 @@
             android:background="@color/light_gray"/>
 
         <TextView
+            android:id="@+id/description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
             android:padding="@dimen/four_dp"
-            android:id="@+id/description"
-            android:fontFamily="@font/indie_flower"
-            app:layout_constraintLeft_toLeftOf="@+id/description_label"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/image"
             app:layout_constraintTop_toBottomOf="@+id/description_delimiter" />
 

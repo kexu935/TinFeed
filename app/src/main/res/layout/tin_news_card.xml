@@ -20,7 +20,7 @@
             android:layout_gravity="top"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:gravity="center|start|end"
             android:orientation="vertical">
 
@@ -28,8 +28,8 @@
                 android:id="@+id/news_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxLines="2"
                 android:padding="@dimen/four_dp"
-                android:singleLine="true"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/four_dp"
-                android:fontFamily="@font/indie_flower"
+                android:fontFamily="sans-serif"
                 android:maxLines="2"
                 android:padding="@dimen/four_dp"
                 android:textColor="@color/dark_gray"

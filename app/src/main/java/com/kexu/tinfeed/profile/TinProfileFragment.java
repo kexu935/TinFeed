@@ -15,7 +15,7 @@ import com.kexu.tinfeed.save.detail.TitleViewModel;
 
 public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> implements ProfileContract.View {
     private ViewModelAdapter viewModelAdapter;
-    public static final Country[] country = {Country.us, Country.cn, Country.de, Country.in};
+    public static final Country[] country = {Country.us, Country.cn, Country.de, Country.in, Country.sg};
 
     @NonNull
     public static TinProfileFragment newInstance() {
