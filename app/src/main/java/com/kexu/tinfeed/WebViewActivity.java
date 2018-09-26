@@ -88,9 +88,9 @@ public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMen
             case R.id.menu_share:
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "From TinNews: \n" + url;
+                String shareBody = "From TinFeed: \n" + url;
                 sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
-                this.startActivity(Intent.createChooser(sharingIntent, "Share TinNews"));
+                this.startActivity(Intent.createChooser(sharingIntent, "Share TinFeed"));
                 break;
             case R.id.menu_copy:
                 ClipboardManager clipboard = (ClipboardManager)
