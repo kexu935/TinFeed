@@ -28,6 +28,7 @@ public class TinApplication extends Application {
         return database;
     }
 
+    @Contract(pure = true)
     public static SharedPreferences getSharedPreferences() {
         return sharedPreferences;
     }

@@ -28,7 +28,6 @@
     <string name="no_saved_news">No Saved News</string>
     <string name="readmore">ReadMore</string>
     <string name="author">Author:</string>
-    <string name="description">Description:</string>
     <string name="like">Like</string>
     <string name="dislike">Dislike</string>
 </resources>
