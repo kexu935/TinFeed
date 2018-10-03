@@ -27,7 +27,7 @@ public class MainActivity extends TinBasicActivity {
         viewPager = findViewById(R.id.viewpager);
         adapter = new TinFragmentPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(TinFragmentPagerAdapter.FRAGMENT_NUMBER);
+        viewPager.setOffscreenPageLimit(adapter.getCount());
 
         bottomBar = findViewById(R.id.bottom_navigation);
         bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
