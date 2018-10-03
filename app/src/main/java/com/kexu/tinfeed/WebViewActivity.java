@@ -96,7 +96,9 @@ public class WebViewActivity extends TinBasicActivity implements PopupMenu.OnMen
                 ClipboardManager clipboard = (ClipboardManager)
                         getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("simple text", url);
-                clipboard.setPrimaryClip(clip);
+                if (clipboard != null) {
+                    clipboard.setPrimaryClip(clip);
+                }
                 showSnackBar("Link copied！");
             default:
                 break;

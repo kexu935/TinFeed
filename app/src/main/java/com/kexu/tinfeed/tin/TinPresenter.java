@@ -1,7 +1,5 @@
 package com.kexu.tinfeed.tin;
 
-import android.app.Activity;
-
 import com.kexu.tinfeed.profile.CountryEvent;
 import com.kexu.tinfeed.retrofit.response.News;
 

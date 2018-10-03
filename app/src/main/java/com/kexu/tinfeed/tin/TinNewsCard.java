@@ -19,7 +19,7 @@ import com.mindorks.placeholderview.annotations.swipe.SwipeOutState;
 import com.squareup.picasso.Picasso;
 
 @Layout(R.layout.tin_news_card)
-public class TinNewsCard {
+class TinNewsCard {
 
     @View(R.id.news_image)
     private ImageView image;
@@ -35,7 +35,7 @@ public class TinNewsCard {
 
     private final OnSwipeListener onSwipeListener;
 
-    public TinNewsCard(News news, SwipePlaceHolderView swipeView, OnSwipeListener onSwipeListener) {
+    TinNewsCard(News news, SwipePlaceHolderView swipeView, OnSwipeListener onSwipeListener) {
         this.news = news;
         this.swipeView = swipeView;
         this.onSwipeListener = onSwipeListener;
