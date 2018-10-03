@@ -16,7 +16,6 @@ import com.kexu.tinfeed.common.TinFragmentPagerAdapter;
 
 public class MainActivity extends TinBasicActivity {
     private ViewPager viewPager;
-    private BottomNavigationView bottomBar;
     private TinFragmentPagerAdapter adapter;
 
     @Override
@@ -29,7 +28,7 @@ public class MainActivity extends TinBasicActivity {
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(adapter.getCount());
 
-        bottomBar = findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomBar = findViewById(R.id.bottom_navigation);
         bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
