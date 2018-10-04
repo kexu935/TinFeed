@@ -1,5 +1,6 @@
 package com.kexu.tinfeed.profile.country;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 
 import com.kexu.tinfeed.TinApplication;
@@ -23,15 +24,14 @@ public class CountrySettingModel implements CountrySettingContract.Model {
         this.presenter = presenter;
     }
 
+    @SuppressLint("CheckResult")
     @Override
     public void getSavedCountry() {
         Observable<String> observable = Observable.just(sharedPreferences.getString(COUNTRY, "us"));
         observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(s -> {
             presenter.setDefaultCountry(s);
-        }, error -> {
-
-        });
-
+            }, error -> {}
+        );
     }
 
     @Override
