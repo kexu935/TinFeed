@@ -50,7 +50,7 @@ public class SavedNewsFragment extends MvpFragment<SavedNewsContract.Presenter> 
 
     @Override
     public void loadSavedNews(List<News> newsList) {
-        if (newsList.size() == 0) {
+        if (newsList == null || newsList.size() == 0) {
             emptyState.setVisibility(View.VISIBLE);
         } else {
             emptyState.setVisibility(View.GONE);

@@ -20,7 +20,7 @@ public class SavedNewsViewModel extends BaseViewModel<SavedNewsViewModel.SavedNe
     private static int[] ICON_ARRAY = new int[]{R.drawable.a_news_icon, R.drawable.g_news_icon,
             R.drawable.c_news_icon, R.drawable.y_news_icon, R.drawable.m_news_icon};
 
-    public SavedNewsViewModel(News news, TinFragmentManager tinFragmentManager) {
+    SavedNewsViewModel(News news, TinFragmentManager tinFragmentManager) {
         super(R.layout.saved_news_item);
         this.news = news;
         this.tinFragmentManager = tinFragmentManager;
@@ -48,13 +48,13 @@ public class SavedNewsViewModel extends BaseViewModel<SavedNewsViewModel.SavedNe
         return ICON_ARRAY[(int)(Math.random() * 5)];
     }
 
-    public static class SavedNewsViewHolder extends RecyclerView.ViewHolder {
+    static class SavedNewsViewHolder extends RecyclerView.ViewHolder {
 
         TextView author;
         TextView description;
         ImageView icon;
 
-        public SavedNewsViewHolder(View itemView) {
+        SavedNewsViewHolder(View itemView) {
             super(itemView);
             author = itemView.findViewById(R.id.author);
             description = itemView.findViewById(R.id.description);

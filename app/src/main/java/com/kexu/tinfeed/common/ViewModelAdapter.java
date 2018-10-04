@@ -77,7 +77,7 @@ public class ViewModelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             this.viewModels.add(baseViewModel);
 
             //If there are multiple items of the same type the index will just update
-            viewTypeMap.put(baseViewModel.getViewType(), baseViewModel);
+            this.viewTypeMap.put(baseViewModel.getViewType(), baseViewModel);
         }
     }
 
