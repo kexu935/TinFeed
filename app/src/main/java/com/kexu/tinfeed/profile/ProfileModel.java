@@ -27,10 +27,4 @@ public class ProfileModel implements ProfileContract.Model {
             presenter.onCacheCleared();
         }, error -> {});
     }
-
-    @Override
-    public void setDefaultCountry(String country) {
-        EventBus.getDefault().post(new CountryEvent(country));
-        presenter.onCountryChanged();
-    }
 }

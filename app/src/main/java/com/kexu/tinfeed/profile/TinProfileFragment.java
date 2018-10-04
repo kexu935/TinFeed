@@ -11,11 +11,11 @@ import android.view.ViewGroup;
 import com.kexu.tinfeed.R;
 import com.kexu.tinfeed.common.ViewModelAdapter;
 import com.kexu.tinfeed.mvp.MvpFragment;
+import com.kexu.tinfeed.profile.country.CountrySettingFragment;
 import com.kexu.tinfeed.save.detail.TitleViewModel;
 
 public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> implements ProfileContract.View {
     private ViewModelAdapter viewModelAdapter;
-    public static final Country[] country = {Country.us, Country.cn, Country.de, Country.in, Country.sg};
 
     @NonNull
     public static TinProfileFragment newInstance() {
@@ -44,23 +44,15 @@ public class TinProfileFragment extends MvpFragment<ProfileContract.Presenter> i
         if (viewModelAdapter.isEmpty()) {
             viewModelAdapter.addViewModel(new TitleViewModel(getString(R.string.setting), R.layout.setting_title_layout));
 
-            viewModelAdapter.addViewModel(new RowTextViewModel(null, getString(R.string.clear_cache), presenter.getCacheClearListener()));
+            viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.clear_cache), presenter.getCacheClearListener()));
 
-            viewModelAdapter.addViewModel(new TitleViewModel(getString(R.string.change_country), R.layout.setting_title_layout));
-
-            for (Country c : country) {
-                viewModelAdapter.addViewModel(new RowTextViewModel(c.getCountryFlag(), getString(c.getCountry()), presenter.getOnCountryChangeListener(getString(c.getCountryUrl()))));
-            }
+            viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.change_country),
+                    view -> tinFragmentManager.doFragmentTransaction(CountrySettingFragment.newInstance())));
         }
     }
 
     @Override
     public void onCacheCleared() {
         tinFragmentManager.showSnackBar("Saved news cleared!");
-    }
-
-    @Override
-    public void onCountryChanged() {
-        tinFragmentManager.showSnackBar("Country changed!");
     }
 }

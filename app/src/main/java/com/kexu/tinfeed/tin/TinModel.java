@@ -33,17 +33,9 @@ public class TinModel implements TinContract.Model {
         this.presenter = presenter;
     }
 
-    @SuppressLint("ApplySharedPref")
-    @Override
-    public void setCountry(String country) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(COUNTRY, country);
-        editor.commit();
-    }
-
     @SuppressLint("CheckResult")
     @Override
-    public void fetchData(String country, boolean isClear) {
+    public void fetchData(boolean isClear) {
         Observable<String> observable = Observable.just(sharedPreferences.getString(COUNTRY, "us"));
         observable.flatMap(newsRequestApi::getNewsByCountry)
                 .subscribeOn(Schedulers.io())

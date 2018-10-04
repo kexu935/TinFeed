@@ -1,6 +1,6 @@
 package com.kexu.tinfeed.tin;
 
-import com.kexu.tinfeed.profile.CountryEvent;
+import com.kexu.tinfeed.profile.country.CountryChangeEvent;
 import com.kexu.tinfeed.retrofit.response.News;
 
 import org.greenrobot.eventbus.EventBus;
@@ -13,7 +13,7 @@ public class TinPresenter implements TinContract.Presenter {
 
     private TinContract.View view;
     private TinContract.Model model;
-    private String country;
+    //private String country;
 
     TinPresenter() {
         this.model = new TinModel();
@@ -31,18 +31,16 @@ public class TinPresenter implements TinContract.Presenter {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(CountryEvent countryEvent) {
+    public void onEvent(CountryChangeEvent countryChangeEvent) {
         if (this.view != null) {
-            this.country = countryEvent.country;
-            this.model.setCountry(this.country);
-            this.model.fetchData(this.country, true);
+            this.model.fetchData(true);
         }
     }
 
     @Override
     public void onViewAttached(TinContract.View view) {
         this.view = view;
-        this.model.fetchData(this.country, false);
+        this.model.fetchData(false);
     }
 
     @Override
@@ -65,7 +63,7 @@ public class TinPresenter implements TinContract.Presenter {
     @Override
     public void onOutOfCard() {
         if (this.view != null) {
-            this.model.fetchData(country, false);
+            this.model.fetchData(false);
         }
     }
 
