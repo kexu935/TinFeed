@@ -3,9 +3,9 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            keyAlias 'MyAndroidKey'
+            keyAlias 'key0'
             keyPassword 'fm935qshs'
-            storeFile file('/Users/kex/Developer/android.jks')
+            storeFile file('/Users/kex/Developer/tinfeed.jks')
             storePassword 'fm935qshs'
         }
     }
@@ -14,8 +14,8 @@ android {
         applicationId "com.kexu.tinfeed"
         minSdkVersion 17
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
