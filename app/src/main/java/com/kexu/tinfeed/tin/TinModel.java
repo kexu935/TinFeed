@@ -9,6 +9,8 @@ import com.kexu.tinfeed.retrofit.NewsRequestApi;
 import com.kexu.tinfeed.retrofit.RetrofitClient;
 import com.kexu.tinfeed.retrofit.response.News;
 
+import java.util.List;
+
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;

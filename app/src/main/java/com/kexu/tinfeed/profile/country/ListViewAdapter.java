@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.kexu.tinfeed.MainActivity;
 import com.kexu.tinfeed.R;
+import com.kexu.tinfeed.common.TinFragmentManager;
 
 import java.util.List;
 
@@ -18,11 +19,13 @@ public class ListViewAdapter extends BaseAdapter {
     private List<Country> countries;
     private Context context;
     private CountryListener countryListener;
+    private TinFragmentManager tinFragmentManager;
 
-    ListViewAdapter(List<Country> countries, Context context, CountryListener countryListener) {
+    ListViewAdapter(List<Country> countries, Context context, CountryListener countryListener, TinFragmentManager tinFragmentManager) {
         this.countries = countries;
         this.context = context;
         this.countryListener = countryListener;
+        this.tinFragmentManager = tinFragmentManager;
     }
 
     @Override
@@ -63,6 +66,7 @@ public class ListViewAdapter extends BaseAdapter {
             country.setSelected(true);
             countryListener.onCountryClicked(country);
             notifyDataSetChanged();
+            tinFragmentManager.showSnackBar("Country changed!");
         });
         return convertView;
 

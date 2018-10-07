@@ -12,9 +12,10 @@ import com.kexu.tinfeed.mvp.MvpFragment;
 
 import java.util.List;
 
-public class CountrySettingFragment extends MvpFragment<CountrySettingContract.Presenter> implements CountrySettingContract.View{
+public class CountrySettingFragment extends MvpFragment<CountrySettingContract.Presenter> implements CountrySettingContract.View {
 
     private ListView countryGroup;
+
     @NonNull
     public static CountrySettingFragment newInstance() {
         return new CountrySettingFragment();
@@ -37,7 +38,9 @@ public class CountrySettingFragment extends MvpFragment<CountrySettingContract.P
 
     @Override
     public void loadCountries(List<Country> countryList) {
-        ListViewAdapter adapter = new ListViewAdapter(countryList, getContext(), presenter.getCountryListener());
+        ListViewAdapter adapter = new ListViewAdapter(countryList, getContext(),
+                presenter.getCountryListener(),
+                tinFragmentManager);
         countryGroup.setAdapter(adapter);
     }
 }

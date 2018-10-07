@@ -31,6 +31,7 @@ public class News implements Parcelable {
         url = in.readString();
         image = in.readString();
         time = in.readString();
+        //key = in.readInt();
     }
 
     public static final Creator<News> CREATOR = new Creator<News>() {
