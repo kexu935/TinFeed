@@ -68,6 +68,11 @@ public class TinGalleryFragment extends MvpFragment<TinContract.Presenter> imple
     }
 
     @Override
+    public void onNoInternetConnection() {
+        tinFragmentManager.showSnackBar("No Internet connection!");
+    }
+
+    @Override
     public void onLike(News news) {
         presenter.saveFavoriteNews(news);
         tinFragmentManager.showSnackBar("Saving news...");

@@ -73,4 +73,11 @@ public class TinPresenter implements TinContract.Presenter {
             view.onError();
         }
     }
+
+    @Override
+    public void onNoInternetConnection() {
+        if (view != null) {
+            view.onNoInternetConnection();
+        }
+    }
 }
